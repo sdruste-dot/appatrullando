@@ -1,0 +1,17 @@
+{
+  "name": "INVADERS",
+  "short_name": "INVADERS",
+  "description": "Entrenamiento del supuesto práctico de Policía Local: infracciones de la LO 4/2015 en escenas ilustradas.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f3efe6",
+  "theme_color": "#161616",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

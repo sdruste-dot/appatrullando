@@ -1,0 +1,3265 @@
+{
+ "paquete": "LOPSC",
+ "lote": "1-2",
+ "citas": {
+  "36.10": "Portar, exhibir o usar armas prohibidas, así como portar, exhibir o usar armas de modo negligente, temerario o intimidatorio, o fuera de los lugares habilitados para su uso, aún cuando en este último caso se tuviera licencia, siempre que dichas conductas no constituyan infracción penal.",
+  "47.1#1": "Los agentes de la autoridad intervendrán y aprehenderán cautelarmente los instrumentos utilizados para la comisión de la infracción, así como el dinero, los frutos o los productos directamente obtenidos, que se mantendrán en los depósitos establecidos al efecto o bajo la custodia de las Fuerzas y Cuerpos de Seguridad mientras se tramita el procedimiento sancionador o hasta que, en su caso, se resuelva la devolución o se decrete el comiso.",
+  "18.2": "Los agentes de la autoridad podrán proceder a la ocupación temporal de cualesquiera objetos, instrumentos o medios de agresión, incluso de las armas que se porten con licencia, permiso o autorización si se estima necesario, con objeto de prevenir la comisión de cualquier delito, o cuando exista peligro para la seguridad de las personas o de los bienes.",
+  "37.2": "La exhibición de objetos peligrosos para la vida e integridad física de las personas con ánimo intimidatorio, siempre que no constituya delito o infracción grave.",
+  "36.6": "La desobediencia o la resistencia a la autoridad o a sus agentes en el ejercicio de sus funciones, cuando no sean constitutivas de delito, así como la negativa a identificarse a requerimiento de la autoridad o de sus agentes o la alegación de datos falsos o inexactos en los procesos de identificación.",
+  "16.2#1": "Cuando no fuera posible la identificación por cualquier medio, incluida la vía telemática o telefónica, o si la persona se negase a identificarse, los agentes, para impedir la comisión de un delito o al objeto de sancionar una infracción, podrán requerir a quienes no pudieran ser identificados a que les acompañen a las dependencias policiales más próximas en las que se disponga de los medios adecuados para la práctica de esta diligencia, a los solos efectos de su identificación y por el tiempo estrictamente necesario, que en ningún caso podrá superar las seis horas.",
+  "37.4": "Las faltas de respeto y consideración cuyo destinatario sea un miembro de las Fuerzas y Cuerpos de Seguridad en el ejercicio de sus funciones de protección de la seguridad, cuando estas conductas no sean constitutivas de infracción penal.",
+  "36.5": "Las acciones y omisiones que impidan u obstaculicen el funcionamiento de los servicios de emergencia, provocando o incrementando un riesgo para la vida o integridad de las personas o de daños en los bienes, o agravando las consecuencias del suceso que motive la actuación de aquéllos.",
+  "37.16": "Dejar sueltos o en condiciones de causar daños animales feroces o dañinos, así como abandonar animales domésticos en condiciones en que pueda peligrar su vida.",
+  "35.4": "La proyección de haces de luz, mediante cualquier tipo de dispositivo, sobre los pilotos o conductores de medios de transporte que puedan deslumbrarles o distraer su atención y provocar accidentes.",
+  "37.6": "La proyección de haces de luz, mediante cualquier tipo de dispositivo, sobre miembros de las Fuerzas y Cuerpos de Seguridad para impedir o dificultar el ejercicio de sus funciones.",
+  "36.3": "Causar desórdenes en las vías, espacios o establecimientos públicos, u obstaculizar la vía pública con mobiliario urbano, vehículos, contenedores, neumáticos u otros objetos, cuando en ambos casos se ocasione una alteración grave de la seguridad ciudadana.",
+  "37.17": "El consumo de bebidas alcohólicas en lugares, vías, establecimientos o transportes públicos cuando perturbe gravemente la tranquilidad ciudadana.",
+  "36.16": "El consumo o la tenencia ilícitos de drogas tóxicas, estupefacientes o sustancias psicotrópicas, aunque no estuvieran destinadas al tráfico, en lugares, vías, establecimientos públicos o transportes colectivos, así como el abandono de los instrumentos u otros efectos empleados para ello en los citados lugares.",
+  "19.2": "La aprehensión durante las diligencias de identificación, registro y comprobación de armas, drogas tóxicas, estupefacientes, sustancias psicotrópicas u otros efectos procedentes de un delito o infracción administrativa se hará constar en el acta correspondiente, que habrá de ser firmada por el interesado; si éste se negara a firmarla, se dejará constancia expresa de su negativa. El acta que se extienda gozará de presunción de veracidad de los hechos en ella consignados, salvo prueba en contrario.",
+  "37.13": "Los daños o el deslucimiento de bienes muebles o inmuebles de uso o servicio público, así como de bienes muebles o inmuebles privados en la vía pública, cuando no constituyan infracción penal."
+ },
+ "vinetas": [
+  {
+   "id": "36.10-A",
+   "regla": "36.10",
+   "tipo": "hallazgo",
+   "gemela": "37.2",
+   "hueco": "parque",
+   "duracion": "continuo",
+   "beats": [
+    "Un hombre apoya una carabina en el hombro y dispara a unas latas colocadas sobre un banco del parque.",
+    "Recarga y sigue disparando. Una madre aleja a su hijo del columpio."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Carabina de aire comprimido. Tarjeta de armas a su nombre, en vigor."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Usa un arma fuera de un lugar habilitado para su uso. Que tenga la tarjeta en regla no lo salva: el 36.10 sanciona ese uso «aún cuando en este último caso se tuviera licencia». El arma, instrumento de la infracción, se interviene.",
+   "dudas": "Que una carabina de aire comprimido es un arma lo dice el Reglamento de Armas, no la LOPSC. Aquí lo da la propia documentación de la escena.",
+   "dibujo": [
+    [
+     [
+      "latas",
+      0.9,
+      -0.7,
+      {}
+     ],
+     [
+      "p",
+      0,
+      0,
+      {
+       "arm": "aim",
+       "item": "carabina",
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "latas",
+      0.9,
+      -0.7,
+      {}
+     ],
+     [
+      "p",
+      0,
+      0,
+      {
+       "arm": "aim",
+       "item": "carabina",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.5,
+      0.9,
+      {
+       "hair": 1,
+       "arm": "hold",
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.8,
+      1.0,
+      {
+       "kid": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.10",
+    "47.1#1",
+    "18.2"
+   ]
+  },
+  {
+   "id": "36.10-B",
+   "regla": "36.10",
+   "tipo": "hallazgo",
+   "gemela": "37.2",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "En la parada del autobús, un hombre abre y cierra una navaja sin parar, con la hoja hacia la gente que espera.",
+    "Se acerca un paso a una pareja y vuelve a abrir la navaja delante de ellos, sin decir nada."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: varios usuarios de la parada han llamado asustados. Nadie dice haber sido amenazado de palabra."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Exhibe un arma de modo intimidatorio. No hay amenaza concreta a nadie, así que no sale de la vía administrativa. La navaja se interviene.",
+   "dudas": "La frontera con un delito de amenazas es fina. La escena la resuelve con un dato expreso (nadie ha sido amenazado de palabra), pero conviene que lo valides.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0,
+      0.2,
+      {
+       "item": "navaja",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      0.9,
+      0.4,
+      {}
+     ],
+     [
+      "p",
+      1.3,
+      0.2,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.6,
+      0.3,
+      {
+       "item": "navaja",
+       "arm": "aim"
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.45,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.25,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.10",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.2-A",
+   "regla": "37.2",
+   "tipo": "hallazgo",
+   "gemela": "36.10",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Dos conductores discuten por un hueco de aparcamiento. Uno saca del maletero una cadena gruesa y se la enrolla en la mano, mirando fijamente al otro, sin decir nada.",
+    "El otro conductor se mete en su coche y se va."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—¿Qué pasa? La llevo para la moto."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Una cadena no es un arma, pero sí un objeto peligroso para la integridad física, y la exhibe para intimidar. Es la gemela leve del 36.10: el objeto decide la gravedad. La cadena, instrumento de la infracción, se interviene.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "coche",
+      0,
+      0,
+      {}
+     ],
+     [
+      "coche",
+      1.6,
+      0.5,
+      {}
+     ],
+     [
+      "p",
+      0.4,
+      -0.6,
+      {
+       "item": "cadena",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.6,
+      -0.4,
+      {
+       "flip": 1,
+       "arm": "cross"
+      }
+     ]
+    ],
+    [
+     [
+      "coche",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.4,
+      -0.6,
+      {
+       "item": "cadena",
+       "arm": "hold"
+      }
+     ]
+    ]
+   ],
+   "acto": 0,
+   "_c": [
+    "37.2",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.2-B",
+   "regla": "37.2",
+   "tipo": "hallazgo",
+   "gemela": "36.10",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "Frente a la puerta de un bar, un joven golpea un bate de béisbol contra la palma de la mano, sin quitar ojo a los porteros.",
+    "Sigue igual, diez minutos después."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: los porteros del bar avisan de que lleva un buen rato así delante de la puerta. Le echaron hace una hora."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Exhibe un objeto peligroso con ánimo intimidatorio. El bate no es un arma: leve. Se interviene como instrumento de la infracción.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.6,
+      1.0,
+      {
+       "item": "bate",
+       "arm": "hold",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      -0.3,
+      0.3,
+      {
+       "arm": "cross"
+      }
+     ],
+     [
+      "p",
+      0.1,
+      0.2,
+      {
+       "arm": "cross",
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.6,
+      1.0,
+      {
+       "item": "bate",
+       "arm": "hold",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      -0.3,
+      0.3,
+      {
+       "arm": "cross"
+      }
+     ],
+     [
+      "p",
+      0.1,
+      0.2,
+      {
+       "arm": "cross",
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.2",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "S-37.2",
+   "regla": "37.2",
+   "tipo": "senuelo",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "Un chico con ropa de deporte espera el autobús con un bate de béisbol asomando de la bolsa.",
+    "Mira el móvil, con la bolsa entre los pies."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Voy a entrenar. Jugamos en el campo de la Química."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Llevar un bate no es exhibirlo con ánimo intimidatorio. Sin intimidación no hay 37.2.",
+   "dudas": "",
+   "condicion": true,
+   "dibujo": [
+    [
+     [
+      "p",
+      0.2,
+      0.3,
+      {
+       "item": "bolsabate",
+       "arm": "phone",
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.2,
+      0.3,
+      {
+       "item": "bolsabate",
+       "arm": "phone",
+       "cap": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.2"
+   ]
+  },
+  {
+   "id": "36.6-A",
+   "regla": "36.6",
+   "tipo": "hallazgo",
+   "gemela": "37.4",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Los agentes paran a un ciclista que circulaba por la acera y le piden que se identifique.",
+    "—No llevo nada encima y no os pienso decir mi nombre."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: sin datos con la descripción. No hay forma de identificarle por teléfono."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia y traslado para identificación"
+    ]
+   },
+   "why": "Negarse a identificarse a requerimiento de los agentes es grave. Como no se le puede identificar por ningún medio, se le puede requerir que acompañe a los agentes a dependencias, solo para identificarle y nunca más de seis horas.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "bici",
+      0,
+      -0.4,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      -0.2,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.3,
+      0.1,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "bici",
+      0,
+      -0.4,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      -0.2,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.3,
+      0.1,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "bocadillo",
+      0,
+      -0.4,
+      {
+       "t": "No os pienso decir mi nombre."
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.6",
+    "16.2#1"
+   ]
+  },
+  {
+   "id": "36.6-B",
+   "regla": "36.6",
+   "tipo": "hallazgo",
+   "gemela": "37.4",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "Hay un portal acordonado por humo. Un agente ordena a un vecino que se aparte del acceso y él no se mueve.",
+    "Segunda orden. Sigue sin moverse, cruzado de brazos.",
+    "A la tercera orden se aparta, protestando."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Es mi portal y de aquí no me mueve nadie. …Vale, vale, ya me aparto."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Desobedece las órdenes de los agentes en el ejercicio de sus funciones, aunque al final cede. No hay violencia ni una desobediencia de entidad penal: es la desobediencia administrativa del 36.6.",
+   "dudas": "Dónde acaba la desobediencia administrativa y empieza el delito lo dice el Código Penal. La escena la sitúa en el lado administrativo porque al final cede. Conviene que lo valides con tu academia.",
+   "dibujo": [
+    [
+     [
+      "humo",
+      0,
+      0,
+      {}
+     ],
+     [
+      "cinta",
+      0.4,
+      0.7,
+      {}
+     ],
+     [
+      "p",
+      0.4,
+      1.1,
+      {
+       "arm": "cross"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      1.3,
+      {
+       "uni": 1,
+       "flip": 1,
+       "arm": "aim"
+      }
+     ]
+    ],
+    [
+     [
+      "humo",
+      0,
+      0,
+      {}
+     ],
+     [
+      "cinta",
+      0.4,
+      0.7,
+      {}
+     ],
+     [
+      "p",
+      0.4,
+      1.1,
+      {
+       "arm": "cross"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      1.3,
+      {
+       "uni": 1,
+       "flip": 1,
+       "arm": "aim"
+      }
+     ],
+     [
+      "bocadillo",
+      0.4,
+      1.1,
+      {
+       "t": "De aquí no me mueve nadie."
+      }
+     ]
+    ],
+    [
+     [
+      "humo",
+      0,
+      0,
+      {}
+     ],
+     [
+      "cinta",
+      0.4,
+      0.7,
+      {}
+     ],
+     [
+      "p",
+      1.9,
+      0.6,
+      {
+       "arm": "none"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      1.3,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "bocadillo",
+      1.9,
+      0.6,
+      {
+       "t": "Vale, vale, ya me aparto."
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.6"
+   ]
+  },
+  {
+   "id": "37.4-A",
+   "regla": "37.4",
+   "tipo": "hallazgo",
+   "gemela": "36.6",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un agente le entrega a un ciclista el boletín de denuncia.",
+    "El ciclista se aleja pedaleando y grita: «¡Payasos con gorra!»."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—¡Que os den!"
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Falta de respeto y consideración a agentes en el ejercicio de sus funciones. Es la gemela leve del 36.6: aquí no se desobedece nada, se insulta.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      0,
+      -0.5,
+      {
+       "uni": 1,
+       "item": "boletin",
+       "arm": "hold"
+      }
+     ],
+     [
+      "bici",
+      0.7,
+      -0.3,
+      {
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0,
+      -0.5,
+      {
+       "uni": 1
+      }
+     ],
+     [
+      "bici",
+      2.4,
+      0.2,
+      {}
+     ],
+     [
+      "bocadillo",
+      2.4,
+      0.2,
+      {
+       "t": "¡Payasos con gorra!"
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.4"
+   ]
+  },
+  {
+   "id": "37.4-B",
+   "regla": "37.4",
+   "tipo": "hallazgo",
+   "gemela": "36.6",
+   "hueco": "terraza",
+   "duracion": "instantaneo",
+   "beats": [
+    "La patrulla pasa junto a una terraza llena.",
+    "Desde una mesa, un grupo grita a los agentes: «¡Pringados, id a currar!», entre risas."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Era broma, hombre, no os pongáis así."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Falta de respeto y consideración a agentes que están patrullando. Que lo presente como una broma no cambia la conducta.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      -0.3,
+      0.2,
+      {
+       "sit": 1,
+       "item": "bottle",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      0.4,
+      0.4,
+      {
+       "sit": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      0.5,
+      -0.3,
+      {
+       "sit": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.8,
+      1.6,
+      {
+       "uni": 1
+      }
+     ],
+     [
+      "p",
+      2.2,
+      1.8,
+      {
+       "uni": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      -0.3,
+      0.2,
+      {
+       "sit": 1,
+       "item": "bottle",
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      0.4,
+      0.4,
+      {
+       "sit": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      0.5,
+      -0.3,
+      {
+       "sit": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.8,
+      1.6,
+      {
+       "uni": 1
+      }
+     ],
+     [
+      "p",
+      2.2,
+      1.8,
+      {
+       "uni": 1
+      }
+     ],
+     [
+      "bocadillo",
+      -0.3,
+      0.2,
+      {
+       "t": "¡Pringados, id a currar!"
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.4"
+   ]
+  },
+  {
+   "id": "S-37.4",
+   "regla": "37.4",
+   "tipo": "senuelo",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un vecino recibe un boletín de denuncia por aparcar en el vado.",
+    "Lo lee y contesta en tono seco: «Me parece injusta y la voy a recurrir»."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Están en su derecho a ponerla y yo, en el mío a recurrirla."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Discrepar o anunciar un recurso, sin insultos ni menosprecio, no es una falta de respeto.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "coche",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.6,
+      {
+       "arm": "hold",
+       "item": "boletin"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      -0.4,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "coche",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.6,
+      {
+       "arm": "hold",
+       "item": "boletin"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      -0.4,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "bocadillo",
+      0.6,
+      -0.6,
+      {
+       "t": "Me parece injusta y la voy a recurrir."
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.4"
+   ]
+  },
+  {
+   "id": "36.5-A",
+   "regla": "36.5",
+   "tipo": "hallazgo",
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Una ambulancia con las luces encendidas no puede salir: un coche en doble fila la encierra.",
+    "El conductor del coche vuelve, discute con los técnicos y tarda en mover el coche mientras bajan a un paciente en camilla."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: la ambulancia lleva a un paciente con dolor torácico. Han perdido varios minutos."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Obstaculiza el funcionamiento de un servicio de emergencia y aumenta el riesgo para la vida del paciente.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "ambu",
+      0,
+      0,
+      {
+       "luces": 1
+      }
+     ],
+     [
+      "coche",
+      0.2,
+      0.9,
+      {}
+     ]
+    ],
+    [
+     [
+      "ambu",
+      0,
+      0,
+      {
+       "luces": 1
+      }
+     ],
+     [
+      "coche",
+      0.2,
+      0.9,
+      {}
+     ],
+     [
+      "p",
+      1.5,
+      -0.5,
+      {
+       "arm": "aim"
+      }
+     ],
+     [
+      "p",
+      0.5,
+      -0.6,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "camilla",
+      -0.4,
+      -0.7,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "36.5"
+   ]
+  },
+  {
+   "id": "36.5-B",
+   "regla": "36.5",
+   "tipo": "hallazgo",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "Sale humo de un portal. Un corrillo de curiosos graba con el móvil delante del acceso.",
+    "Llegan los bomberos y los curiosos no se apartan. Siguen grabando y les cortan el paso."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: los bomberos piden despejar el acceso. Hay una persona mayor atrapada en el segundo piso."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Impiden con su presencia el paso de los bomberos y aumentan el riesgo para la persona atrapada. Obstaculizar un servicio de emergencia es grave.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "humo",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      1.0,
+      {
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      1.0,
+      1.2,
+      {
+       "arm": "phone",
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.9,
+      {
+       "arm": "phone",
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "humo",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      1.0,
+      {
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      1.0,
+      1.2,
+      {
+       "arm": "phone",
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.9,
+      {
+       "arm": "phone",
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.0,
+      1.8,
+      {
+       "bombero": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.4,
+      2.0,
+      {
+       "bombero": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.5"
+   ]
+  },
+  {
+   "id": "36.5-C",
+   "regla": "36.5",
+   "tipo": "hallazgo",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "Un contenedor arde pegado a una fachada; las llamas lamen un coche aparcado al lado. Un corrillo de curiosos graba en mitad de la calle.",
+    "Llega el camión de bomberos y los curiosos no se apartan. El fuego prende la rueda del coche."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: no hay nadie dentro del coche ni en riesgo en el edificio. El fuego está pasando al vehículo y a la fachada."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Aquí no hay ninguna persona en peligro, y aun así es grave: el 36.5 también se cumple cuando la obstrucción provoca o incrementa un riesgo «de daños en los bienes», o agrava las consecuencias del suceso. El fuego crece mientras los bomberos no pueden pasar.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "cont",
+      0.2,
+      0.4,
+      {
+       "fuego": 1
+      }
+     ],
+     [
+      "coche",
+      1.0,
+      1.0,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      1.9,
+      {
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      1.4,
+      2.0,
+      {
+       "arm": "phone",
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "cont",
+      0.2,
+      0.4,
+      {
+       "fuego": 1
+      }
+     ],
+     [
+      "coche",
+      1.0,
+      1.0,
+      {
+       "fuego": 1
+      }
+     ],
+     [
+      "p",
+      0.9,
+      1.9,
+      {
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      1.4,
+      2.0,
+      {
+       "arm": "phone",
+       "flip": 1
+      }
+     ],
+     [
+      "bomberos",
+      -3.0,
+      2.3,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "36.5"
+   ]
+  },
+  {
+   "id": "S-36.5",
+   "regla": "36.5",
+   "tipo": "senuelo",
+   "condicion": true,
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Una ambulancia aparcada no puede salir: un coche en doble fila la encierra.",
+    "La dotación de la ambulancia está tomando un café en la terraza del bar de enfrente."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: esa unidad está fuera de servicio, de descanso. No tiene ningún aviso asignado."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Es la misma imagen que una obstrucción grave, pero le falta la condición. El 36.5 exige que la obstrucción acabe «provocando o incrementando un riesgo» o agravando las consecuencias de un suceso, y aquí no hay ningún servicio en marcha. No es 36.5 ni ninguna otra conducta de la LOPSC: el sello correcto es el de sin infracción LOPSC. El coche en doble fila puede ser una infracción de tráfico, que entrará con su paquete.",
+   "dudas": "Mientras solo esté cargada la LOPSC, el sello de sin infracción significa sin infracción de esta ley. Con el DLC de tráfico, la respuesta correcta pasará a ser la infracción de tráfico.",
+   "dibujo": [
+    [
+     [
+      "ambu",
+      0,
+      0,
+      {
+       "luces": 0
+      }
+     ],
+     [
+      "coche",
+      0.2,
+      0.9,
+      {}
+     ]
+    ],
+    [
+     [
+      "ambu",
+      0,
+      0,
+      {
+       "luces": 0
+      }
+     ],
+     [
+      "coche",
+      0.2,
+      0.9,
+      {}
+     ],
+     [
+      "p",
+      -1.1,
+      -1.4,
+      {
+       "sit": 1,
+       "tec": 1,
+       "item": "cafe",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      -0.5,
+      -1.3,
+      {
+       "sit": 1,
+       "tec": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.5"
+   ]
+  },
+  {
+   "id": "37.16-A",
+   "regla": "37.16",
+   "tipo": "hallazgo",
+   "hueco": "parque",
+   "duracion": "continuo",
+   "beats": [
+    "Un perro grande y musculoso, sin correa ni bozal, se abalanza ladrando sobre unos peatones.",
+    "Su dueño lo llama desde lejos, sin acercarse."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—No hace nada, es muy bueno. Lo suelto siempre aquí."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Deja suelto, y en condiciones de causar daños, a un animal dañino: se abalanza sobre la gente.",
+   "dudas": "La legislación de perros potencialmente peligrosos puede concurrir con esta conducta. Aquí se trabaja solo con la LOPSC.",
+   "dibujo": [
+    [
+     [
+      "perro",
+      0,
+      0,
+      {
+       "g": 1
+      }
+     ],
+     [
+      "p",
+      0.8,
+      0.3,
+      {
+       "flip": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.6,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "perro",
+      0.4,
+      0.2,
+      {
+       "g": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.4,
+      {
+       "flip": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.7,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -1.6,
+      -1.0,
+      {
+       "arm": "aim",
+       "item": "correa"
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.16"
+   ]
+  },
+  {
+   "id": "37.16-B",
+   "regla": "37.16",
+   "tipo": "hallazgo",
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "En la plaza, un perro de presa suelto persigue a unos niños que corren hacia los columpios.",
+    "El perro muerde la correa de otro perro mientras su dueño charla en un banco."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Si es que tiene mucha energía…"
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Lo deja suelto, en condiciones de causar daños. El animal persigue a niños y ataca a otro perro.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "perro",
+      0,
+      0,
+      {
+       "g": 1
+      }
+     ],
+     [
+      "p",
+      0.8,
+      0.2,
+      {
+       "kid": 1
+      }
+     ],
+     [
+      "p",
+      1.2,
+      0.4,
+      {
+       "kid": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -1.2,
+      -0.4,
+      {
+       "sit": 1,
+       "arm": "phone"
+      }
+     ]
+    ],
+    [
+     [
+      "perro",
+      0,
+      0,
+      {
+       "g": 1
+      }
+     ],
+     [
+      "perro",
+      0.6,
+      0.25,
+      {}
+     ],
+     [
+      "p",
+      0.95,
+      0.35,
+      {
+       "arm": "hold",
+       "item": "correa"
+      }
+     ],
+     [
+      "p",
+      -1.2,
+      -0.4,
+      {
+       "sit": 1,
+       "arm": "phone"
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.16"
+   ]
+  },
+  {
+   "id": "S-37.16",
+   "regla": "37.16",
+   "tipo": "senuelo",
+   "hueco": "parque",
+   "duracion": "continuo",
+   "beats": [
+    "Un perro mediano corre suelto, tranquilo, detrás de una pelota.",
+    "Junto a la valla hay un cartel: «Zona de esparcimiento canino»."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Cartel municipal: zona de esparcimiento canino. Perros sueltos permitidos."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Un perro tranquilo, suelto en una zona habilitada para ello, no es un animal feroz o dañino suelto en condiciones de causar daños.",
+   "dudas": "",
+   "condicion": true,
+   "dibujo": [
+    [
+     [
+      "perro",
+      0.3,
+      0.3,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      0.1,
+      {
+       "arm": "hold",
+       "item": "correa"
+      }
+     ]
+    ],
+    [
+     [
+      "perro",
+      0.6,
+      0.5,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      0.1,
+      {
+       "arm": "up"
+      }
+     ]
+    ]
+   ],
+   "fijo": [
+    [
+     "valla",
+     -1.2,
+     -0.9,
+     {}
+    ],
+    [
+     "cartel",
+     -0.7,
+     -0.6,
+     {
+      "t": "ZONA CANINA"
+     }
+    ]
+   ],
+   "_c": [
+    "37.16"
+   ]
+  },
+  {
+   "id": "35.4-A",
+   "regla": "35.4",
+   "tipo": "hallazgo",
+   "gemela": "37.6",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un autobús urbano avanza por la calle. Desde la acera, un chico le apunta a la cabina con un puntero de luz verde.",
+    "El autobús frena en seco; el conductor se tapa los ojos con la mano."
+   ],
+   "acto": 0,
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: el conductor de la línea 24 dice que un destello verde le ha cegado unos segundos."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Muy grave · art. 35",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Proyecta un haz de luz sobre el conductor de un medio de transporte, que puede deslumbrarle y provocar un accidente. Es la gemela muy grave del 37.6: lo que decide es sobre quién cae la luz. El puntero se interviene.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "bus",
+      -0.2,
+      -0.5,
+      {}
+     ],
+     [
+      "p",
+      1.2,
+      -1.9,
+      {
+       "arm": "aim",
+       "item": "laser",
+       "cap": 1
+      }
+     ],
+     [
+      "haz",
+      1.2,
+      -1.9,
+      {
+       "c": "verde",
+       "e": [
+        2.3,
+        1.8,
+        20
+       ]
+      }
+     ]
+    ],
+    [
+     [
+      "bus",
+      0.1,
+      -0.5,
+      {
+       "frena": 1
+      }
+     ],
+     [
+      "p",
+      1.2,
+      -1.9,
+      {
+       "arm": "none",
+       "cap": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "35.4",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "35.4-B",
+   "regla": "35.4",
+   "tipo": "hallazgo",
+   "gemela": "37.6",
+   "hueco": "portal_local",
+   "duracion": "instantaneo",
+   "beats": [
+    "Se oye un helicóptero sanitario que se acerca bajo. Un joven sale al portal y saca un puntero del bolsillo.",
+    "Apunta el puntero al helicóptero, que hace un giro brusco."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Solo quería ver si llegaba hasta arriba."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Muy grave · art. 35",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Haz de luz sobre el piloto de una aeronave, que puede deslumbrarle y provocar un accidente. La curiosidad no cambia la conducta: el tipo no exige intención de causar el accidente. El puntero se interviene.",
+   "dudas": "",
+   "lugares": [
+    "hospital"
+   ],
+   "dibujo": [
+    [
+     [
+      "p",
+      0.4,
+      0.8,
+      {
+       "arm": "hold",
+       "item": "laser"
+      }
+     ],
+     [
+      "heli",
+      6.5,
+      -1.0,
+      {
+       "z": 200,
+       "s": 0.7
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.4,
+      0.8,
+      {
+       "arm": "aim",
+       "item": "laser"
+      }
+     ],
+     [
+      "heli",
+      4.2,
+      -1.6,
+      {
+       "z": 175,
+       "s": 0.9,
+       "rot": -22
+      }
+     ],
+     [
+      "haz",
+      0.4,
+      0.8,
+      {
+       "c": "verde",
+       "e": [
+        3.8,
+        -2.4,
+        175
+       ]
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "35.4",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.6-A",
+   "regla": "37.6",
+   "tipo": "hallazgo",
+   "gemela": "35.4",
+   "hueco": "terraza",
+   "duracion": "continuo",
+   "beats": [
+    "Dos agentes identifican a un cliente de la terraza. Su amigo enciende una linterna potente y se la pone a los agentes en la cara.",
+    "Sigue alumbrándoles a los ojos mientras intentan leer el documento."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—¡A ver si así os enteráis de lo que molesta!"
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Proyecta un haz de luz sobre agentes para dificultarles el ejercicio de sus funciones. No hace falta que sea un láser: el tipo dice «mediante cualquier tipo de dispositivo». Leve. La linterna se interviene.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.4,
+      0.8,
+      {
+       "arm": "hold",
+       "item": "boletin"
+      }
+     ],
+     [
+      "p",
+      1.2,
+      0.4,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.7,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.6,
+      0.6,
+      {
+       "arm": "aim",
+       "item": "linterna",
+       "hair": 1
+      }
+     ],
+     [
+      "haz",
+      -0.6,
+      0.6,
+      {
+       "c": "luz",
+       "face": [
+        1.8,
+        -0.2
+       ]
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.4,
+      0.8,
+      {
+       "arm": "hold",
+       "item": "boletin"
+      }
+     ],
+     [
+      "p",
+      1.2,
+      0.4,
+      {
+       "uni": 1,
+       "flip": 1,
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.7,
+      {
+       "uni": 1,
+       "flip": 1,
+       "item": "boletin",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      -0.6,
+      0.6,
+      {
+       "arm": "aim",
+       "item": "linterna",
+       "hair": 1
+      }
+     ],
+     [
+      "haz",
+      -0.6,
+      0.6,
+      {
+       "c": "luz",
+       "face": [
+        1.8,
+        -0.2
+       ]
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.6",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.6-B",
+   "regla": "37.6",
+   "tipo": "hallazgo",
+   "gemela": "35.4",
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Un agente regula el tráfico en un cruce. Desde un coche parado, un punto rojo le baila en la cara.",
+    "El agente se cubre la cara y deja de dirigir el tráfico unos segundos."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: el compañero del cruce avisa de que alguien desde un coche gris le apunta a los ojos cada vez que da paso."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "El haz cae sobre un agente, no sobre un conductor, y le dificulta regular el tráfico: es el 37.6, leve, y no el 35.4. La finalidad de dificultar sus funciones la aclara la central (lo hace cada vez que da paso). El puntero se interviene.",
+   "info_decisiva": true,
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "coche",
+      0,
+      -0.3,
+      {
+       "gris": 1
+      }
+     ],
+     [
+      "p",
+      3.1,
+      0.1,
+      {
+       "uni": 1,
+       "arm": "up",
+       "flip": 1
+      }
+     ],
+     [
+      "haz",
+      0,
+      -0.3,
+      {
+       "c": "rojo",
+       "s": [
+        1.4,
+        0.5,
+        19
+       ],
+       "face": [
+        3.1,
+        0.4
+       ]
+      }
+     ]
+    ],
+    [
+     [
+      "coche",
+      0,
+      -0.3,
+      {
+       "gris": 1
+      }
+     ],
+     [
+      "p",
+      3.1,
+      0.1,
+      {
+       "uni": 1,
+       "arm": "phone",
+       "flip": 1
+      }
+     ],
+     [
+      "haz",
+      0,
+      -0.3,
+      {
+       "c": "rojo",
+       "s": [
+        1.4,
+        0.5,
+        19
+       ],
+       "face": [
+        3.1,
+        0.4
+       ]
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.6",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "S-37.6",
+   "regla": "37.6",
+   "tipo": "senuelo",
+   "condicion": true,
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "Un guía con un grupo de turistas señala la fachada de la estación con un puntero láser.",
+    "La patrulla pasa al lado. El punto sigue sobre la fachada, lejos de los agentes."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Les explico la fachada, agente. Enseguida terminamos."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Usar un puntero no es infracción. El 37.6 exige proyectar la luz sobre agentes para impedir o dificultar sus funciones, y el 35.4, sobre pilotos o conductores. Aquí el haz va a una fachada.",
+   "dudas": "",
+   "lugares": [
+    "estacion"
+   ],
+   "dibujo": [
+    [
+     [
+      "p",
+      0,
+      0,
+      {
+       "arm": "aim",
+       "item": "laser",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      0.7,
+      0.6,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.3,
+      {
+       "flip": 1,
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      0.5,
+      1.1,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "haz",
+      0,
+      0,
+      {
+       "c": "rojo",
+       "e": [
+        1.5,
+        -10.2,
+        44
+       ]
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0,
+      0,
+      {
+       "arm": "aim",
+       "item": "laser",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      0.7,
+      0.6,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.3,
+      {
+       "flip": 1,
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      0.5,
+      1.1,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -1.2,
+      1.1,
+      {
+       "uni": 1
+      }
+     ],
+     [
+      "p",
+      -1.6,
+      1.4,
+      {
+       "uni": 1
+      }
+     ],
+     [
+      "haz",
+      0,
+      0,
+      {
+       "c": "rojo",
+       "e": [
+        1.5,
+        -10.2,
+        44
+       ]
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.6",
+    "35.4"
+   ]
+  },
+  {
+   "id": "36.3-A",
+   "regla": "36.3",
+   "tipo": "hallazgo",
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Unos jóvenes ruedan neumáticos viejos y vallas de obra hasta el centro de la calzada.",
+    "Los coches se acumulan pitando; varios conductores bajan y se encaran entre ellos."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: retenciones hasta la rotonda. Dos conductores han llegado a las manos."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Obstaculiza la vía pública con neumáticos y vallas, y la central confirma una alteración grave de la seguridad ciudadana.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "neum",
+      0.4,
+      0.1,
+      {}
+     ],
+     [
+      "vallaobra",
+      1.3,
+      -0.1,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      0.6,
+      {
+       "hood": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      2.4,
+      0.5,
+      {
+       "hood": 1,
+       "arm": "hold",
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "neum",
+      0.4,
+      0.1,
+      {}
+     ],
+     [
+      "vallaobra",
+      1.3,
+      -0.1,
+      {}
+     ],
+     [
+      "coche",
+      -2.6,
+      -0.3,
+      {
+       "pita": 1
+      }
+     ],
+     [
+      "coche",
+      3.4,
+      0.3,
+      {
+       "pita": 1
+      }
+     ],
+     [
+      "p",
+      -0.6,
+      -1.1,
+      {
+       "arm": "punch"
+      }
+     ],
+     [
+      "p",
+      0.0,
+      -1.3,
+      {
+       "arm": "punch",
+       "flip": 1,
+       "cap": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.3"
+   ]
+  },
+  {
+   "id": "36.3-B",
+   "regla": "36.3",
+   "tipo": "hallazgo",
+   "hueco": "terraza",
+   "duracion": "instantaneo",
+   "beats": [
+    "En la terraza, un grupo discute con el camarero.",
+    "Vuelcan dos mesas y lanzan sillas al suelo de la terraza."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: varias llamadas desde la zona. La gente huye del local y hay carreras y empujones en toda la explanada."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Causa desórdenes en un establecimiento público. Lo que lo convierte en el 36.3 es la alteración grave de la seguridad ciudadana, y eso solo lo da la central: la estampida por la explanada.",
+   "info_decisiva": true,
+   "dudas": "Si hubiera lesiones o daños de entidad, entraría el Código Penal. La escena los excluye.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.5,
+      0.1,
+      {
+       "arm": "cross",
+       "tec": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.7,
+      {
+       "arm": "punch"
+      }
+     ],
+     [
+      "p",
+      0.1,
+      1.0,
+      {
+       "arm": "up",
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.8,
+      1.2,
+      {
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "mesavolcada",
+      -0.2,
+      0.2,
+      {}
+     ],
+     [
+      "mesavolcada",
+      0.9,
+      0.7,
+      {}
+     ],
+     [
+      "silla",
+      0.3,
+      1.5,
+      {}
+     ],
+     [
+      "silla",
+      -0.6,
+      -0.1,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      -0.2,
+      {
+       "arm": "cross",
+       "tec": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.8,
+      {
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      0.1,
+      1.1,
+      {
+       "arm": "punch",
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.9,
+      1.3,
+      {
+       "arm": "up",
+       "cap": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.3"
+   ]
+  },
+  {
+   "id": "S-36.3",
+   "regla": "36.3",
+   "tipo": "senuelo",
+   "condicion": true,
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Un camión de mudanzas descarga. Dos operarios dejan un sofá y una nevera en el borde de la calzada.",
+    "Los coches los esquivan sin problema y los operarios los suben al portal."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: sin avisos ni incidencias en la zona."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Hay un objeto en la vía, pero el 36.3 exige que se ocasione una alteración grave de la seguridad ciudadana, y aquí no la hay. No es infracción LOPSC. Puede serlo de la ordenanza municipal, que entrará con su paquete.",
+   "info_decisiva": true,
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "camion",
+      0,
+      -0.4,
+      {}
+     ],
+     [
+      "sofa",
+      0.5,
+      -1.1,
+      {}
+     ],
+     [
+      "nevera",
+      2.0,
+      -1.1,
+      {}
+     ],
+     [
+      "p",
+      1.3,
+      -1.6,
+      {
+       "arm": "hold",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      2.7,
+      -1.4,
+      {
+       "cap": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "camion",
+      0,
+      -0.4,
+      {}
+     ],
+     [
+      "sofa",
+      0.5,
+      -1.1,
+      {}
+     ],
+     [
+      "nevera",
+      2.0,
+      -1.1,
+      {}
+     ],
+     [
+      "p",
+      1.3,
+      -1.6,
+      {
+       "arm": "up",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      2.7,
+      -1.4,
+      {
+       "arm": "up",
+       "cap": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "coche",
+      -2.7,
+      0.6,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "36.3"
+   ]
+  },
+  {
+   "id": "37.17-A",
+   "regla": "37.17",
+   "tipo": "hallazgo",
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "Un grupo bebe en la explanada con un altavoz a todo volumen.",
+    "Pasada la medianoche, siguen. Hay vecinos asomados a las ventanas."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: cinco llamadas de vecinos. Dicen que no pueden dormir."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Consumo de alcohol en la vía pública que perturba gravemente la tranquilidad: las llamadas lo acreditan. Leve. Las bebidas se intervienen.",
+   "dudas": "",
+   "lugares": [
+    "estacion"
+   ],
+   "inicio": 1,
+   "dibujo": [
+    [
+     [
+      "altavoz",
+      0.5,
+      0.4,
+      {
+       "notas": 1
+      }
+     ],
+     [
+      "p",
+      0,
+      0,
+      {
+       "item": "bottle",
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      0.9,
+      0.1,
+      {
+       "item": "bottle",
+       "arm": "hold",
+       "flip": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      0.2,
+      0.9,
+      {
+       "item": "lata",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.8,
+      {
+       "flip": 1,
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "altavoz",
+      0.5,
+      0.4,
+      {
+       "notas": 1
+      }
+     ],
+     [
+      "p",
+      0,
+      0,
+      {
+       "item": "bottle",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      0.9,
+      0.1,
+      {
+       "item": "bottle",
+       "arm": "up",
+       "flip": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      0.2,
+      0.9,
+      {
+       "item": "lata",
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.8,
+      {
+       "flip": 1,
+       "cap": 1
+      }
+     ],
+     [
+      "vecino",
+      0,
+      0,
+      {
+       "abs": [
+        0,
+        3.4
+       ],
+       "z": 32
+      }
+     ],
+     [
+      "vecino",
+      0,
+      0,
+      {
+       "abs": [
+        0,
+        6.4
+       ],
+       "z": 84
+      }
+     ],
+     [
+      "vecino",
+      0,
+      0,
+      {
+       "abs": [
+        0,
+        9.4
+       ],
+       "z": 58
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.17",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.17-B",
+   "regla": "37.17",
+   "tipo": "hallazgo",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "Dos hombres beben en el banco de una parada, con varias latas vacías a los pies.",
+    "Hablan alto y miran a los viajeros que esperan."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: la jefa de estación pide ayuda. Increpan a los viajeros y nadie se atreve a esperar en esa parada."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Beber en la parada solo es infracción si perturba gravemente la tranquilidad, y eso solo lo dice la central: increpan a los viajeros hasta vaciar la parada. Leve; las bebidas se intervienen.",
+   "info_decisiva": true,
+   "dudas": "",
+   "lugares": [
+    "estacion"
+   ],
+   "dibujo": [
+    [
+     [
+      "latasuelo",
+      0.3,
+      0.5,
+      {}
+     ],
+     [
+      "p",
+      0,
+      0,
+      {
+       "sit": 1,
+       "item": "lata",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      0.6,
+      0.15,
+      {
+       "sit": 1,
+       "item": "lata",
+       "arm": "hold",
+       "flip": 1,
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.9,
+      0.4,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.3,
+      0.6,
+      {
+       "hair": 1,
+       "flip": 1,
+       "arm": "phone"
+      }
+     ]
+    ],
+    [
+     [
+      "latasuelo",
+      0.3,
+      0.5,
+      {}
+     ],
+     [
+      "p",
+      0,
+      0,
+      {
+       "sit": 1,
+       "item": "lata",
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      0.6,
+      0.15,
+      {
+       "sit": 1,
+       "item": "lata",
+       "arm": "punch",
+       "flip": 1,
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      2.4,
+      0.6,
+      {}
+     ],
+     [
+      "p",
+      2.8,
+      0.8,
+      {
+       "hair": 1,
+       "arm": "phone"
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.17",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "S-37.17",
+   "regla": "37.17",
+   "tipo": "senuelo",
+   "condicion": true,
+   "hueco": "parque",
+   "duracion": "continuo",
+   "beats": [
+    "Una pareja toma una cerveza sentada en un banco del parque, al atardecer.",
+    "Siguen charlando en voz baja."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Nos la acabamos y nos vamos, agente."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Beber en la calle no basta para el 37.17: hace falta que el consumo perturbe gravemente la tranquilidad ciudadana. No es infracción LOPSC. Puede serlo de la ordenanza municipal, que entrará con su paquete.",
+   "dudas": "",
+   "lugares": [
+    "rio"
+   ],
+   "dibujo": [
+    [
+     [
+      "p",
+      0.0,
+      -0.6,
+      {
+       "sit": 1,
+       "item": "bottle",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      0.6,
+      -0.5,
+      {
+       "sit": 1,
+       "hair": 1,
+       "flip": 1,
+       "item": "bottle",
+       "arm": "hold"
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.0,
+      -0.6,
+      {
+       "sit": 1,
+       "item": "bottle",
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      0.6,
+      -0.5,
+      {
+       "sit": 1,
+       "hair": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.17"
+   ]
+  },
+  {
+   "id": "36.16-A",
+   "regla": "36.16",
+   "tipo": "hallazgo",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "Un viajero se lía algo sentado en la parada.",
+    "Lo enciende y fuma; el olor llega a toda la parada."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Es para el viaje, no le hago daño a nadie."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Consumo de drogas en un lugar público. La sustancia se interviene y se levanta acta, que firma el interesado o en la que consta su negativa.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      0,
+      0,
+      {
+       "sit": 1,
+       "arm": "phone",
+       "item": "liar"
+      }
+     ],
+     [
+      "bolsita",
+      0.15,
+      0.15,
+      {
+       "z": 8,
+       "g": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0,
+      0,
+      {
+       "sit": 1,
+       "arm": "hold",
+       "item": "porro"
+      }
+     ],
+     [
+      "humillo",
+      0,
+      0,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "36.16",
+    "47.1#1",
+    "19.2"
+   ]
+  },
+  {
+   "id": "36.16-B",
+   "regla": "36.16",
+   "tipo": "hallazgo",
+   "hueco": "parque",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un joven sentado en el césped ve llegar a la patrulla.",
+    "Se agacha y mete algo pequeño bajo el banco."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Acta de comprobación: bajo el banco, una bolsita con unos 3 g de hachís. El joven reconoce que es suya y que es para consumo propio."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Tenencia ilícita de drogas en un lugar público. El tipo dice «aunque no estuvieran destinadas al tráfico»: el consumo propio no la salva. Solo se sabe qué escondía investigando. La sustancia se interviene con acta.",
+   "info_decisiva": true,
+   "dudas": "El gesto es sospechoso, pero la infracción solo existe si hay sustancia: el dato está únicamente en la investigación.",
+   "lugares": [
+    "rio",
+    "hospital"
+   ],
+   "dibujo": [
+    [
+     [
+      "p",
+      0.4,
+      0.3,
+      {
+       "sit": 1,
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      2.2,
+      1.2,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.6,
+      1.4,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.3,
+      -0.3,
+      {
+       "sit": 1,
+       "cap": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "bolsita",
+      0.5,
+      -0.7,
+      {}
+     ],
+     [
+      "p",
+      1.5,
+      0.8,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.9,
+      1.0,
+      {
+       "uni": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.16",
+    "47.1#1",
+    "19.2"
+   ]
+  },
+  {
+   "id": "S-36.16",
+   "regla": "36.16",
+   "tipo": "senuelo",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "Un viajero se lía algo sentado en la parada.",
+    "Lo enciende y fuma; el olor llega a toda la parada."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Es tabaco de liar, agente. Mire el paquete."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "El gesto es idéntico al de liar un porro, pero es tabaco. Sin droga no hay 36.16. Solo se sabe investigando.",
+   "info_decisiva": true,
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      0,
+      0,
+      {
+       "sit": 1,
+       "arm": "phone",
+       "item": "liar"
+      }
+     ],
+     [
+      "bolsita",
+      0.15,
+      0.15,
+      {
+       "z": 8,
+       "g": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0,
+      0,
+      {
+       "sit": 1,
+       "arm": "hold",
+       "item": "porro"
+      }
+     ],
+     [
+      "humillo",
+      0,
+      0,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "36.16"
+   ]
+  },
+  {
+   "id": "37.13-A",
+   "regla": "37.13",
+   "tipo": "hallazgo",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "Un chaval agita un espray junto a la marquesina del autobús.",
+    "Pinta su firma en grande sobre el cristal de la marquesina."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Es arte, ¿vale? Ya lo limpiarán."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Deslucimiento de un bien mueble de uso público. Leve. El espray, instrumento de la infracción, se interviene.",
+   "dudas": "La frontera con el delito de daños del Código Penal depende de la entidad del daño. Aquí es deslucimiento (una pintada sobre el cristal), no rotura.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.2,
+      0.3,
+      {
+       "hood": 1,
+       "arm": "hold",
+       "item": "espray"
+      }
+     ]
+    ],
+    [
+     [
+      "pintada",
+      -0.4,
+      -0.5,
+      {
+       "z": 24
+      }
+     ],
+     [
+      "p",
+      0.2,
+      0.3,
+      {
+       "hood": 1,
+       "arm": "up",
+       "item": "espray",
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.13",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.13-B",
+   "regla": "37.13",
+   "tipo": "hallazgo",
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "Una persona con un cubo de cola pega carteles en una farola.",
+    "Sigue con el buzón de correos y el panel informativo municipal."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Es para un concierto, solo unos cuantos."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Deslucimiento de bienes de uso o servicio público (mobiliario urbano) con cartelería. Leve. Los carteles y la cola, instrumentos de la infracción, se intervienen.",
+   "dudas": "La ordenanza municipal de limpieza también regula la cartelería; aquí se trabaja solo con la LOPSC.",
+   "lugares": [
+    "hospital"
+   ],
+   "dibujo": [
+    [
+     [
+      "cubo",
+      0.6,
+      0.4,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      0.0,
+      {
+       "arm": "up",
+       "hair": 1
+      }
+     ],
+     [
+      "carteles",
+      1.0,
+      -0.4,
+      {
+       "z": 40,
+       "n": 2
+      }
+     ]
+    ],
+    [
+     [
+      "cubo",
+      1.3,
+      0.9,
+      {}
+     ],
+     [
+      "p",
+      1.2,
+      0.6,
+      {
+       "arm": "hold",
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "carteles",
+      1.0,
+      -0.4,
+      {
+       "z": 40,
+       "n": 2
+      }
+     ],
+     [
+      "carteles",
+      1.6,
+      0.2,
+      {
+       "z": 12,
+       "n": 2
+      }
+     ],
+     [
+      "carteles",
+      0.2,
+      -1.0,
+      {
+       "z": 30,
+       "n": 3
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "37.13",
+    "47.1#1"
+   ]
+  }
+ ]
+}
