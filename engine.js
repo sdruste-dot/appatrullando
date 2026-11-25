@@ -1,5 +1,5 @@
 {
-/* ======================= INVADERS · motor v0.7 (app instalable) =======================
+/* ======================= APPatrullando la Ziudad · motor v0.7 (app instalable) =======================
    El motor no contiene contenido legal: lo carga del DLC (dlc/lopsc.json).
    Los lugares (mobiliario fijo, huecos) son del motor; las viñetas, del DLC. */
 const ACCIONES=6,PASA=6;

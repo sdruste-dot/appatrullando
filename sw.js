@@ -3,7 +3,7 @@
    nueva (version.js cambia), el navegador instala la nueva caché en segundo plano y la app
    muestra «Hay una versión nueva»; al aceptarla, se activa y se recarga. */
 importScripts('version.js');
-const CACHE = 'app-' + self.APP_VER;
+const CACHE = 'appatrullando-' + self.APP_VER;
 const ASSETS = [
   './', 'index.html', 'engine.js', 'version.js', 'dlc/lopsc.json', 'manifest.webmanifest',
   'fonts/archivo-latin-400-normal.woff2', 'fonts/archivo-latin-600-normal.woff2', 'fonts/archivo-latin-800-normal.woff2',
@@ -14,7 +14,7 @@ self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS.map(u => new Request(u, {cache: 'reload'})))));
 });
 self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('app-') && k !== CACHE).map(k => caches.delete(k))))
+  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('appatrullando-') && k !== CACHE).map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
 self.addEventListener('message', e => { if (e.data === 'activar') self.skipWaiting(); });

@@ -1,6 +1,6 @@
 {
-  "name": "INVADERS",
-  "short_name": "INVADERS",
+  "name": "APPatrullando la Ziudad",
+  "short_name": "APPatrulla",
   "description": "Entrenamiento del supuesto práctico de Policía Local: infracciones de la LO 4/2015 en escenas ilustradas.",
   "lang": "es",
   "start_url": "./",

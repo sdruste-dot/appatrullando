@@ -1,4 +1,4 @@
-# INVADERS (nombre provisional)
+# APPatrullando la Ziudad
 
 Juego de entrenamiento para el supuesto práctico de la oposición a Policía Local. Cada distrito es una escena ilustrada en tres pases: hay que detectar las infracciones de la Ley Orgánica 4/2015 de protección de la seguridad ciudadana, distinguirlas de lo que parece y no es, y resolver cada caso (vía, gravedad y artículo, y actuación).
 
