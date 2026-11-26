@@ -213,7 +213,7 @@ const LUGARES={
     sin calle con tráfico delante; un recorrido peatonal cruza a media profundidad entre vallas policiales,
     fachadas pegadas a la calle e iglesia al fondo, placita con estatua delante a la derecha y calle lateral a la izquierda.
     El paso avanza entre pases: es AMBIENTE del lugar (no seleccionable), no mobiliario. */
- procesion:{nombre:'Día de procesión en el casco viejo',noche:false,turno:'mediodía',pal:'piedra',horas:['12:40','12:50','13:00'],
+ procesion:{fondo:'fondos/procesion.png',nombre:'Día de procesión en el casco viejo',noche:false,turno:'mediodía',pal:'piedra',horas:['12:40','12:50','13:00'],
   huecos:{recorrido:[[-1.8,8.7],[0.6,8.7],[3.0,8.7],[5.4,8.7],[7.8,8.7],[10.2,8.7],[12.6,8.7]],monumento:[[12.2,12.4]],plaza:[[9.8,13.6],[14.6,14.4],[1.2,11.8],[6.0,12.2]]},
   suelo(){let s=poly([P(-2.5,-2),P(16,-2),P(16,16.6),P(-2.5,16.6)],'#ebe6da');
    s+=poly([P(-2.5,4.2),P(16,4.2),P(16,7.8),P(-2.5,7.8)],'#e4dfd3');
@@ -363,7 +363,7 @@ function ghosts(){const k=st.sel;if(!k)return '';let g='',marks=[];
  const labs=marks.map(([m,c])=>`<g transform="translate(${f1(c[0]-16)},${f1(c[1]+4)})"><rect width="32" height="14" rx="2" fill="#c8102e"/><text x="16" y="10.5" text-anchor="middle" font-size="9" font-weight="800" style="fill:#fff">${H(m)}</text></g>`).join('');
  return `<g pointer-events="none"><g opacity="0.22">${night(g)}</g>${path}${labs}</g>`}
 function render(){
- const m=st.m,lug=st.mis.lug;const L=lug.mobiliario().slice();if(lug.ambiente)L.push(...lug.ambiente(m));const over=[];let body='',stamps='';
+ const m=st.m,lug=st.mis.lug;const L=lug.fondo?[]:lug.mobiliario().slice();if(lug.ambiente)L.push(...lug.ambiente(m));const over=[];let body='',stamps='';
  st.mis.items.forEach(pl=>{const r=drawPl(pl,m,over);if(pl.v.fijo)L.push({z:pl.slot[0]+pl.slot[1]-0.6,s:pl.v.fijo.map(el=>drawEl(el,pl.slot[0],pl.slot[1],null).s).join('')});
   if(!r)return;L.push({z:pl.slot[0]+pl.slot[1]+0.5,s:r.s,k:pl.v.id,pp:r.pp})});
  st.figs.forEach(f=>{if(!f.ms.includes(m))return;const p=figPos(f,m);const c=P(p[0],p[1]);L.push({z:p[0]+p[1],s:person(c[0],c[1],f.o),k:f.id,pp:[c]})});
@@ -482,7 +482,13 @@ function menu(){if(!load(KAV,false))return aviso();const cola=load(KC,[]);
  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>start('distrito',b.dataset.go));
  if(cola.length)document.getElementById('goR').onclick=()=>start('rescate');
  document.getElementById('wipe').onclick=()=>{DISTRITOS.forEach(d=>{progs[d.id]={res:[],quem:[],sup:false};save(KP(d.id),progs[d.id])});save(KC,[]);menu();toast('Progreso y cola borrados')}}
-function start(tipo,did){const mis=buildMission(tipo,did);st={mis,m:0,rev:{},exp:{},sel:null,closed:false,STATIC:mis.lug.suelo()+mis.lug.edificios()};st.figs=figuracion(mis.seed,mis.lug);
+/* v0.10: fondos ilustrados (decisión 16). Si el lugar tiene `fondo`, la imagen sustituye al suelo, los edificios y el
+   mobiliario, que ya vienen dibujados en ella. Encima solo se conservan los rótulos de texto del lugar (las IA de imagen
+   escriben mal los textos), en su posición exacta. La imagen es PNG con transparencia: línea opaca, blanco transparente. */
+const TEXTOS=s=>(s.match(/<text[\s\S]*?<\/text>/g)||[]).join('');
+function estatico(lug){if(!lug.fondo)return lug.suelo()+lug.edificios();
+ return `<image href="${lug.fondo}" x="0" y="0" width="1120" height="780" preserveAspectRatio="none"/>`+TEXTOS(lug.suelo()+lug.edificios()+lug.mobiliario().map(o=>o.s).join(''))}
+function start(tipo,did){const mis=buildMission(tipo,did);st={mis,m:0,rev:{},exp:{},sel:null,closed:false,STATIC:estatico(mis.lug)};st.figs=figuracion(mis.seed,mis.lug);
  document.getElementById('menu').classList.remove('show');render();showPanel();fitVB()}
 document.getElementById('close').onclick=()=>document.getElementById('cfm').classList.add('show');
 document.getElementById('back').onclick=()=>{if(st.closed||!Object.keys(st.exp).length)return menu();document.getElementById('abn').classList.add('show')};

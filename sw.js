@@ -4,12 +4,13 @@
    «Hay una versión nueva»; al aceptarla, se activa y se recarga.
    LA VERSIÓN VIVE AQUÍ, y solo aquí: el navegador solo detecta una versión nueva si cambia
    este archivo, así que cada publicación tiene que cambiar esta línea. */
-const VER = '0.9.0';
+const VER = '0.10.0';
 const CACHE = 'appatrullando-' + VER;
 const ASSETS = [
   './', 'index.html', 'engine.js', 'version.js', 'dlc/lopsc.json', 'manifest.webmanifest',
   'fonts/archivo-latin-400-normal.woff2', 'fonts/archivo-latin-600-normal.woff2', 'fonts/archivo-latin-800-normal.woff2',
   'fonts/archivo-narrow-latin-500-normal.woff2', 'fonts/archivo-narrow-latin-700-normal.woff2',
+  'fondos/procesion.png',
   'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/favicon-32.png'
 ];
 self.addEventListener('install', e => {

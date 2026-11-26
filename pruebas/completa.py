@@ -71,6 +71,8 @@ async def prueba_app(b):
     R.ok(await pg.is_visible('#menuBody'), 'sin conexión: carga el menú')
     await distrito(pg, 'rio')
     R.ok(await pg.evaluate("document.querySelectorAll('#scene [data-k]').length") > 0, 'sin conexión: carga la escena')
+    fondos = await pg.evaluate("Promise.all(Object.values(T.LUGARES).filter(l=>l.fondo).map(l=>fetch(l.fondo).then(r=>l.fondo+':'+r.status).catch(()=>l.fondo+':falla')))")
+    R.ok(bool(fondos) and all(f.endswith(':200') for f in fondos), f'sin conexión: se sirven los fondos ilustrados {fondos}')
     await ctx.set_offline(False)
     R.ok(not pg.errores, f'sin errores JS {pg.errores[:2]}')
     await ctx.close()
