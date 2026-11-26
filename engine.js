@@ -586,6 +586,7 @@ function syncView(){
 }
 fetch('dlc/lopsc.json').then(r=>r.json()).then(d=>{DLC=d;
  document.getElementById('dlcInfo').textContent=`DLC ${d.paquete} · lotes ${d.lote} · ${d.vinetas.length} viñetas`;
- start('distrito','estacion');menu()})
- .catch(err=>{document.getElementById('menuBody').innerHTML='<h2>No se pudo cargar el paquete</h2><p>'+esc(err.message)+'</p>';document.getElementById('menu').classList.add('show')});
+ start('distrito','estacion');
+ document.getElementById('tAut').textContent=self.APP_AUTHOR||'sdruste-dot';const go=document.getElementById('goStart');go.disabled=false;go.onclick=()=>{document.getElementById('title').classList.add('off');menu()}})
+ .catch(err=>{document.getElementById('title').classList.add('off');document.getElementById('menuBody').innerHTML='<h2>No se pudo cargar el paquete</h2><p>'+esc(err.message)+'</p>';document.getElementById('menu').classList.add('show')});
 }

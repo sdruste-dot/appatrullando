@@ -15,7 +15,7 @@ Qué comprueba:
 """
 import asyncio, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from comun import copia_con_gancho, servir, Informe, CHROME
+from comun import pasar_titulo, copia_con_gancho, servir, Informe, CHROME
 from playwright.async_api import async_playwright
 
 PUERTO = 8790
@@ -35,6 +35,7 @@ async def nueva(b, w, h):
 async def entrar(pg):
     await pg.goto(U)
     await pg.wait_for_timeout(1200)
+    await pasar_titulo(pg)
     if await pg.is_visible('#avOk'):
         await pg.click('#avOk')
 
@@ -56,11 +57,15 @@ async def prueba_app(b):
     pg.on('request', lambda r: ext.append(r.url) if not r.url.startswith(U) else None)
     await pg.goto(U)
     await pg.wait_for_timeout(1500)
+    tit = await pg.inner_text('#title') if await pg.is_visible('#title') else ''
+    R.ok('Iniciar partida' in tit and 'supuestos prácticos' in tit.lower() and 'CC BY-NC 4.0' in tit, 'pantalla de título con «Iniciar partida» y licencia')
+    await pasar_titulo(pg)
     txt = await pg.inner_text('#menuBody')
     R.ok(await pg.is_visible('#avOk') and 'CC BY-NC 4.0' in txt, 'aviso de primera apertura con licencia')
     await pg.click('#avOk')
     await pg.reload()
     await pg.wait_for_timeout(1500)
+    await pasar_titulo(pg)
     pie = await pg.inner_text('.foot .ver')
     R.ok('CC BY-NC 4.0' in pie and ' v' in pie, f'pie del menú: {pie}')
     R.ok(not ext, f'ninguna petición a servidores externos {ext[:3] if ext else ""}')
@@ -68,6 +73,7 @@ async def prueba_app(b):
     await ctx.set_offline(True)
     await pg.reload()
     await pg.wait_for_timeout(1500)
+    await pasar_titulo(pg)
     R.ok(await pg.is_visible('#menuBody'), 'sin conexión: carga el menú')
     await distrito(pg, 'rio')
     R.ok(await pg.evaluate("document.querySelectorAll('#scene [data-k]').length") > 0, 'sin conexión: carga la escena')
@@ -86,6 +92,7 @@ async def prueba_sync(b):
                      "localStorage.setItem('inv5.distrito.hospital',JSON.stringify({res:['35.4-A'],quem:['37.6-B'],sup:false}))")
     await a.reload()
     await a.wait_for_timeout(1000)
+    await pasar_titulo(a)
     await a.click('#goSync')
     codigo = await a.input_value('#syOut')
     R.ok(codigo.startswith('INV1.'), 'exporta un código INV1.')
@@ -94,6 +101,7 @@ async def prueba_sync(b):
     await q.evaluate("localStorage.setItem('inv5.cola',JSON.stringify([{regla:'36.3',tipo:'senuelo',vid:'S-36.3',t:'Art. 36.3'}]))")
     await q.reload()
     await q.wait_for_timeout(1000)
+    await pasar_titulo(q)
     await q.click('#goSync')
     await q.fill('#syIn', codigo)
     await q.click('#syGo')
@@ -153,6 +161,7 @@ async def prueba_resolucion(b, w, h):
         await pg.evaluate("localStorage.removeItem('inv5.cola');Object.keys(localStorage).filter(k=>k.startsWith('inv5.distrito')).forEach(k=>localStorage.removeItem(k))")
         await pg.goto(U)
         await pg.wait_for_timeout(800)
+        await pasar_titulo(pg)
         await distrito(pg, did)
         items = await pg.evaluate("T.st.mis.items.map(p=>({id:p.v.id,tipo:p.v.tipo,s:p.s,am:T.actM(p),sol:p.v.sol}))")
         problemas = []

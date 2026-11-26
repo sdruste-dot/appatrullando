@@ -9,7 +9,7 @@ Recuerda: el navegador solo detecta una versión nueva si cambia sw.js (const VE
 """
 import asyncio, sys, os, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from comun import copia_con_gancho, version_git, servir, Informe, RAIZ, CHROME
+from comun import pasar_titulo, copia_con_gancho, version_git, servir, Informe, RAIZ, CHROME
 from playwright.async_api import async_playwright
 
 PUERTO = 8791
@@ -41,13 +41,17 @@ async def main():
         pg.on('pageerror', lambda e: err.append(str(e)))
         await pg.goto(U)
         await pg.wait_for_timeout(1500)
+        await pasar_titulo(pg)
         if await pg.is_visible('#avOk'):
             await pg.click('#avOk')
         await pg.reload()
         await pg.wait_for_timeout(1500)
+        await pasar_titulo(pg)
         print('Instalada la versión anterior:', await pg.inner_text('.foot .ver'))
         vaciar_y_copiar(nueva, sirve)
         await pg.reload()
+        await pg.wait_for_timeout(1500)
+        await pasar_titulo(pg)
         try:
             await pg.wait_for_selector('#upd.show', timeout=15000)
             R.ok(True, 'aparece «Hay una versión nueva»')
@@ -56,6 +60,7 @@ async def main():
         if await pg.is_visible('#updGo'):
             await pg.click('#updGo')
             await pg.wait_for_timeout(2500)
+            await pasar_titulo(pg)
             if await pg.is_visible('#avOk'):
                 await pg.click('#avOk')
             await pg.wait_for_timeout(600)
@@ -64,6 +69,7 @@ async def main():
             await ctx.set_offline(True)
             await pg.reload()
             await pg.wait_for_timeout(1500)
+            await pasar_titulo(pg)
             R.ok('v' + ver_actual in await pg.inner_text('.foot .ver'), 'sin conexión sigue en la versión nueva')
         R.ok(not err, f'sin errores JS {err[:2]}')
         await b.close()

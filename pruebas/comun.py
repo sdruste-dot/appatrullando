@@ -56,3 +56,11 @@ class Informe:
         for f in self.fallos:
             print('  - ' + f)
         return 1 if self.fallos else 0
+
+
+async def pasar_titulo(pg):
+    """Pantalla de título (v0.12): pulsa «Iniciar partida» si está a la vista. Las versiones anteriores no la tienen."""
+    if await pg.is_visible('#goStart'):
+        await pg.wait_for_selector('#goStart:not([disabled])', timeout=10000)
+        await pg.click('#goStart')
+        await pg.wait_for_timeout(300)

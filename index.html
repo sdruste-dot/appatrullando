@@ -135,10 +135,33 @@ blockquote b{display:block;font:700 12px 'Archivo Narrow',sans-serif;color:var(-
 .mis p{margin:0 0 10px}
 details{margin:6px 0 12px}summary{cursor:pointer;font-weight:700}
 .foot{font:500 12px 'Archivo Narrow',sans-serif;color:var(--mut)}
+/* Pantalla de título (v0.12): lámina ilustrada a sangre y cartel de servicio encima. */
+#title{position:fixed;inset:0;z-index:40;background:var(--paper);color:#161616;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:max(20px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+#title.off{display:none}
+#title .tbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;pointer-events:none}
+#title .cartel{position:relative;background:#fbf9f4;border:2.5px solid #161616;box-shadow:6px 6px 0 #161616;padding:26px 34px 28px;text-align:center;max-width:min(92vw,560px);margin-bottom:6vh}
+#title h1{margin:0;font:800 clamp(34px,8.4vw,62px)/.95 Archivo,sans-serif;letter-spacing:-.02em}
+#title h1 .r{color:#c8102e}
+#title h1 small{display:block;font:800 clamp(24px,5.6vw,40px)/1.1 Archivo,sans-serif;letter-spacing:-.01em;margin-top:4px}
+#title .sub{margin:14px 0 22px;font:700 clamp(13px,3.4vw,16px) 'Archivo Narrow',sans-serif;letter-spacing:.22em;text-transform:uppercase;border-top:2px solid #161616;border-bottom:2px solid #161616;padding:6px 0}
+#title .go{min-height:52px;padding:0 30px;font:800 18px Archivo,sans-serif;border:2.5px solid #161616;background:#161616;color:#fbf9f4;border-radius:3px;cursor:pointer}
+#title .go:disabled{opacity:.5;cursor:wait}
+#title .go:active{transform:translate(2px,2px)}
+#title .tfoot .vnum:not(:empty)::after{content:' · '}
+#title .tfoot{display:block;margin:0;position:absolute;left:0;right:0;bottom:0;padding-top:26px!important;padding-bottom:max(10px,env(safe-area-inset-bottom))!important;background:linear-gradient(rgba(243,239,230,0),#f3efe6 55%);text-align:center;font:500 11.5px/1.5 'Archivo Narrow',sans-serif;color:#5e584e;padding:0 16px}
 </style>
 
 </head>
 <body>
+<div id="title" role="dialog" aria-label="Pantalla de título">
+ <img class="tbg" src="fondos/procesion.png" alt="">
+ <div class="cartel">
+  <h1><span class="r">APP</span>atrullando<small>la <span class="r">Z</span>iudad</small></h1>
+  <p class="sub">Supuestos prácticos</p>
+  <button class="go" id="goStart" disabled>Iniciar partida</button>
+ </div>
+ <div class="tfoot foot"><span class="vnum"></span>© 2026 <span id="tAut">sdruste-dot</span> · CC BY-NC 4.0 · Herramienta no oficial</div>
+</div>
 <div class="app">
 <header>
  <div class="ttl"><h1 id="ttl">APPatrullando la Ziudad</h1><p id="dlcInfo">Cargando paquete…</p></div>
