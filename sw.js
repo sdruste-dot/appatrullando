@@ -4,7 +4,7 @@
    «Hay una versión nueva»; al aceptarla, se activa y se recarga.
    LA VERSIÓN VIVE AQUÍ, y solo aquí: el navegador solo detecta una versión nueva si cambia
    este archivo, así que cada publicación tiene que cambiar esta línea. */
-const VER = '0.12.1';
+const VER = '0.12.2';
 const CACHE = 'appatrullando-' + VER;
 const ASSETS = [
   './', 'index.html', 'engine.js', 'version.js', 'dlc/lopsc.json', 'manifest.webmanifest',
