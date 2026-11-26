@@ -1,6 +1,6 @@
 {
  "paquete": "LOPSC",
- "lote": "1-2",
+ "lote": "1-3",
  "citas": {
   "36.10": "Portar, exhibir o usar armas prohibidas, así como portar, exhibir o usar armas de modo negligente, temerario o intimidatorio, o fuera de los lugares habilitados para su uso, aún cuando en este último caso se tuviera licencia, siempre que dichas conductas no constituyan infracción penal.",
   "47.1#1": "Los agentes de la autoridad intervendrán y aprehenderán cautelarmente los instrumentos utilizados para la comisión de la infracción, así como el dinero, los frutos o los productos directamente obtenidos, que se mantendrán en los depósitos establecidos al efecto o bajo la custodia de las Fuerzas y Cuerpos de Seguridad mientras se tramita el procedimiento sancionador o hasta que, en su caso, se resuelva la devolución o se decrete el comiso.",
@@ -17,7 +17,17 @@
   "37.17": "El consumo de bebidas alcohólicas en lugares, vías, establecimientos o transportes públicos cuando perturbe gravemente la tranquilidad ciudadana.",
   "36.16": "El consumo o la tenencia ilícitos de drogas tóxicas, estupefacientes o sustancias psicotrópicas, aunque no estuvieran destinadas al tráfico, en lugares, vías, establecimientos públicos o transportes colectivos, así como el abandono de los instrumentos u otros efectos empleados para ello en los citados lugares.",
   "19.2": "La aprehensión durante las diligencias de identificación, registro y comprobación de armas, drogas tóxicas, estupefacientes, sustancias psicotrópicas u otros efectos procedentes de un delito o infracción administrativa se hará constar en el acta correspondiente, que habrá de ser firmada por el interesado; si éste se negara a firmarla, se dejará constancia expresa de su negativa. El acta que se extienda gozará de presunción de veracidad de los hechos en ella consignados, salvo prueba en contrario.",
-  "37.13": "Los daños o el deslucimiento de bienes muebles o inmuebles de uso o servicio público, así como de bienes muebles o inmuebles privados en la vía pública, cuando no constituyan infracción penal."
+  "37.13": "Los daños o el deslucimiento de bienes muebles o inmuebles de uso o servicio público, así como de bienes muebles o inmuebles privados en la vía pública, cuando no constituyan infracción penal.",
+  "36.1": "La perturbación de la seguridad ciudadana en actos públicos, espectáculos deportivos o culturales, solemnidades y oficios religiosos u otras reuniones a las que asistan numerosas personas, cuando no sean constitutivas de infracción penal.",
+  "30.2": "Estarán exentos de responsabilidad por las infracciones cometidas los menores de catorce años. En caso de que la infracción sea cometida por un menor de catorce años, la autoridad competente lo pondrá en conocimiento del Ministerio Fiscal para que inicie, en su caso, las actuaciones oportunas.",
+  "37.15": "La remoción de vallas, encintados u otros elementos fijos o móviles colocados por las Fuerzas y Cuerpos de Seguridad para delimitar perímetros de seguridad, aun con carácter preventivo, cuando no constituya infracción grave.",
+  "36.8": "La perturbación del desarrollo de una reunión o manifestación lícita, cuando no constituya infracción penal.",
+  "36.11": "La solicitud o aceptación por el demandante de servicios sexuales retribuidos en zonas de tránsito público en las proximidades de lugares destinados a su uso por menores, como centros educativos, parques infantiles o espacios de ocio accesibles a menores de edad, o cuando estas conductas, por el lugar en que se realicen, puedan generar un riesgo para la seguridad vial. Los agentes de la autoridad requerirán a las personas que ofrezcan estos servicios para que se abstengan de hacerlo en dichos lugares, informándoles de que la inobservancia de dicho requerimiento podría constituir una infracción del párrafo 6 de este artículo.",
+  "36.14": "El uso público e indebido de uniformes, insignias o condecoraciones oficiales, o réplicas de los mismos, así como otros elementos del equipamiento de los cuerpos policiales o de los servicios de emergencia que puedan generar engaño acerca de la condición de quien los use, cuando no sea constitutivo de infracción penal.",
+  "36.18": "La ejecución de actos de plantación y cultivo ilícitos de drogas tóxicas, estupefacientes o sustancias psicotrópicas en lugares visibles al público, cuando no sean constitutivos de infracción penal.",
+  "37.5": "La realización o incitación a la realización de actos que atenten contra la libertad e indemnidad sexual, o ejecutar actos de exhibición obscena, cuando no constituya infracción penal.",
+  "37.14": "El escalamiento de edificios o monumentos sin autorización cuando exista un riesgo cierto de que se ocasionen daños a las personas o a los bienes.",
+  "37.7#2": "Asimismo la ocupación de la vía pública con infracción de lo dispuesto por la Ley o contra la decisión adoptada en aplicación de aquella por la autoridad competente. Se entenderá incluida en este supuesto la ocupación de la vía pública para la venta ambulante no autorizada."
  },
  "vinetas": [
   {
@@ -3259,6 +3269,2289 @@
    "_c": [
     "37.13",
     "47.1#1"
+   ]
+  },
+  {
+   "id": "36.1-A",
+   "regla": "36.1",
+   "tipo": "hallazgo",
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "continuo",
+   "beats": [
+    "Al paso de la procesión, un joven enciende una bengala junto a la valla y la agita hacia el público.",
+    "Enciende otra; la gente se aparta a empujones y el paso se detiene."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: la cofradía ha parado el paso por el humo y los empujones. No hay heridos. El joven lleva más bengalas en la mochila."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Perturba la seguridad ciudadana en un acto público al que asisten numerosas personas, sin que haya infracción penal (no hay heridos). Grave. Las bengalas son el instrumento de la infracción y se intervienen.",
+   "dudas": "La pirotecnia sin autorización tiene su propio apartado (36.12, Bravo). Aquí lo que se sanciona es la perturbación del acto.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.6,
+      0.1,
+      {
+       "arm": "up",
+       "item": "bengala"
+      }
+     ],
+     [
+      "humorojo",
+      0.8,
+      0,
+      {
+       "z": 40
+      }
+     ],
+     [
+      "p",
+      1.5,
+      0.3,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.4,
+      {}
+     ]
+    ],
+    [
+     [
+      "p",
+      0.6,
+      0.1,
+      {
+       "arm": "up",
+       "item": "bengala"
+      }
+     ],
+     [
+      "humorojo",
+      0.8,
+      0,
+      {
+       "z": 40
+      }
+     ],
+     [
+      "humorojo",
+      0.4,
+      -0.6,
+      {
+       "z": 34
+      }
+     ],
+     [
+      "p",
+      2.2,
+      0.6,
+      {
+       "hair": 1,
+       "flip": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      -1.1,
+      0.7,
+      {
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.8,
+      {
+       "flip": 1,
+       "arm": "cross"
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "36.1",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "36.1-B",
+   "regla": "36.1",
+   "tipo": "hallazgo",
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "instantaneo",
+   "beats": [
+    "Al paso de la procesión, alguien lanza un petardo desde detrás de la valla.",
+    "El petardo estalla junto a los portadores; el paso se detiene y el público se arremolina."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Identificación: el autor tiene 12 años. Ha venido con sus primos mayores, que están a su lado."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Comunicar al Ministerio Fiscal (menor de 14)"
+    ]
+   },
+   "why": "La conducta es la perturbación del 36.1, grave. Pero el autor tiene 12 años: los menores de catorce años están exentos de responsabilidad, y la autoridad lo pone en conocimiento del Ministerio Fiscal.",
+   "info_decisiva": true,
+   "dudas": "El giro está en la actuación, no en la infracción: sin investigar, la respuesta natural es denunciar.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.6,
+      0.2,
+      {
+       "hood": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      0.4,
+      {
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      -0.1,
+      0.5,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "estallido",
+      0.4,
+      -1.6,
+      {
+       "z": 40,
+       "s": 0.4
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.6,
+      0.2,
+      {
+       "hood": 1
+      }
+     ],
+     [
+      "p",
+      1.3,
+      0.4,
+      {
+       "cap": 1,
+       "arm": "phone"
+      }
+     ],
+     [
+      "p",
+      -0.1,
+      0.5,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "estallido",
+      0.2,
+      -2.4,
+      {
+       "z": 10,
+       "s": 1.2
+      }
+     ],
+     [
+      "ruido",
+      0.2,
+      -2.4,
+      {
+       "z": 44
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "36.1",
+    "30.2"
+   ]
+  },
+  {
+   "id": "36.1-C",
+   "regla": "36.1",
+   "tipo": "hallazgo",
+   "gemela": "37.15",
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un hombre aparta dos vallas del cordón para cruzar con su grupo.",
+    "Las deja tiradas en el suelo; el hueco queda abierto."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: por el hueco ha entrado el público al recorrido. El paso se ha detenido y hay empujones contra los portadores."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Retirar vallas policiales es el 37.15, leve, pero ese apartado se aplica «cuando no constituya infracción grave». Aquí la retirada ha provocado la perturbación del acto público: es el 36.1, grave.",
+   "info_decisiva": true,
+   "dudas": "El giro es de gravedad: sin investigar parece el 37.15 leve. Comparte lámina con 37.15-A, pero con escena distinta (un grupo que cruza frente a una persona sola que sale).",
+   "dibujo": [
+    [
+     [
+      "valla",
+      0.2,
+      -0.75,
+      {}
+     ],
+     [
+      "p",
+      0.8,
+      -0.3,
+      {
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.5,
+      0.2,
+      {}
+     ],
+     [
+      "p",
+      0.3,
+      0.4,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.6,
+      {
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "vallacaida",
+      0.1,
+      -0.4,
+      {}
+     ],
+     [
+      "vallacaida",
+      1.2,
+      -0.1,
+      {}
+     ],
+     [
+      "p",
+      0.8,
+      -1.7,
+      {}
+     ],
+     [
+      "p",
+      1.4,
+      -2.0,
+      {
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      0.3,
+      -1.5,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.0,
+      -2.6,
+      {}
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "36.1",
+    "37.15"
+   ]
+  },
+  {
+   "id": "S-36.1",
+   "regla": "36.1",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "continuo",
+   "beats": [
+    "Un grupo con tambores irrumpe junto al recorrido tocando muy fuerte.",
+    "Siguen tocando pegados a la procesión; el público los mira."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: es la banda de tambores de la propia cofradía. Va en el programa del acto."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "No hay perturbación de la seguridad ciudadana: el ruido forma parte del propio acto. Sin perturbación, no hay 36.1.",
+   "info_decisiva": true,
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.2,
+      0.2,
+      {
+       "arm": "cross",
+       "item": "tambor"
+      }
+     ],
+     [
+      "p",
+      0.8,
+      0.4,
+      {
+       "arm": "cross",
+       "item": "tambor",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.2,
+      {
+       "arm": "cross",
+       "item": "tambor"
+      }
+     ],
+     [
+      "ruido",
+      0.8,
+      0.3,
+      {
+       "z": 46
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.4,
+      -1.3,
+      {
+       "arm": "cross",
+       "item": "tambor"
+      }
+     ],
+     [
+      "p",
+      1.0,
+      -1.1,
+      {
+       "arm": "cross",
+       "item": "tambor",
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.6,
+      -1.4,
+      {
+       "arm": "cross",
+       "item": "tambor"
+      }
+     ],
+     [
+      "ruido",
+      1.0,
+      -1.2,
+      {
+       "z": 46
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "36.1"
+   ]
+  },
+  {
+   "id": "36.8-A",
+   "regla": "36.8",
+   "tipo": "hallazgo",
+   "distrito": "rio",
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "Una concentración de pensionistas con pancartas ocupa el paseo.",
+    "Un hombre con un megáfono se mete en medio, les grita encima de sus consignas e intenta arrancar la pancarta principal."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: la concentración está comunicada a la Delegación del Gobierno. La organizadora dice que no pueden seguir con la lectura del manifiesto."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Perturba el desarrollo de una reunión lícita (comunicada) y le impide seguir, sin violencia ni lesiones que la conviertan en infracción penal. Grave.",
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "pancarta",
+      0,
+      0,
+      {
+       "w": 1.6,
+       "t": "PENSIONES DIGNAS"
+      }
+     ],
+     [
+      "p",
+      0,
+      0.15,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.15,
+      {}
+     ],
+     [
+      "p",
+      0.5,
+      0.7,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.8,
+      {
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "pancarta",
+      0,
+      0,
+      {
+       "w": 1.6,
+       "t": "PENSIONES DIGNAS"
+      }
+     ],
+     [
+      "p",
+      0,
+      0.15,
+      {
+       "hair": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.15,
+      {
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      0.5,
+      0.7,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.8,
+      {
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      0.8,
+      -0.5,
+      {
+       "arm": "hold",
+       "item": "megafono",
+       "flip": 1
+      }
+     ],
+     [
+      "ruido",
+      0.8,
+      -0.5,
+      {
+       "z": 44
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "rio"
+   ],
+   "_c": [
+    "36.8"
+   ]
+  },
+  {
+   "id": "36.8-B",
+   "regla": "36.8",
+   "tipo": "hallazgo",
+   "distrito": "estacion",
+   "hueco": "plaza",
+   "duracion": "instantaneo",
+   "beats": [
+    "En la explanada, conductores de autobús en huelga hacen una concentración con pancartas.",
+    "Un grupo se mete entre ellos, arranca la pancarta y hay empujones; una manifestante cae al suelo."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Parte del SAMU: la manifestante tiene una fractura de muñeca y la trasladan al hospital para operarla."
+   },
+   "sol": {
+    "via": "pen"
+   },
+   "why": "El 36.8 solo se aplica «cuando no constituya infracción penal». Hay una lesión que necesita tratamiento quirúrgico causada en la agresión: la vía es penal.",
+   "info_decisiva": true,
+   "dudas": "Sin la información, la escena parece el 36.8 administrativo. El delito concreto (lesiones, o impedir el ejercicio del derecho de reunión con violencia) se calificará en el atestado; aquí solo se entrena la elección de vía.",
+   "dibujo": [
+    [
+     [
+      "pancarta",
+      0,
+      0,
+      {
+       "w": 1.6,
+       "t": "HUELGA"
+      }
+     ],
+     [
+      "p",
+      0,
+      0.15,
+      {
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.15,
+      {}
+     ],
+     [
+      "p",
+      0.5,
+      0.7,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.1,
+      0.8,
+      {}
+     ]
+    ],
+    [
+     [
+      "pancarta",
+      0.2,
+      0.5,
+      {
+       "w": 1.6,
+       "t": "HUELGA",
+       "caida": 1
+      }
+     ],
+     [
+      "p",
+      0.5,
+      -0.2,
+      {
+       "hood": 1,
+       "arm": "punch"
+      }
+     ],
+     [
+      "p",
+      1.3,
+      -0.1,
+      {
+       "hood": 1,
+       "arm": "punch",
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      0.9,
+      0.9,
+      {
+       "hair": 1,
+       "caida": 1
+      }
+     ],
+     [
+      "p",
+      1.8,
+      0.6,
+      {
+       "arm": "up",
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.3,
+      0.6,
+      {
+       "cap": 1,
+       "arm": "up"
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "estacion"
+   ],
+   "_c": [
+    "36.8"
+   ]
+  },
+  {
+   "id": "S-36.8",
+   "regla": "36.8",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "rio",
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "Un hombre se cruza en la cabecera de una manifestación y discute a voces con quien lleva la pancarta.",
+    "La manifestación sigue avanzando; el hombre se aparta hacia la acera."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: el organizador dice que era un vecino que quería cruzar con el carro de la compra. La marcha no se ha detenido en ningún momento."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Una discusión al paso no perturba el desarrollo de la manifestación: no se ha detenido ni alterado. Sin perturbación, no hay 36.8.",
+   "info_decisiva": true,
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "pancarta",
+      0,
+      0,
+      {
+       "w": 1.6,
+       "t": "VIVIENDA DIGNA"
+      }
+     ],
+     [
+      "p",
+      0,
+      0.15,
+      {}
+     ],
+     [
+      "p",
+      1.6,
+      0.15,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      0.8,
+      -0.6,
+      {
+       "arm": "punch",
+       "flip": 1
+      }
+     ],
+     [
+      "carro",
+      1.2,
+      -0.7,
+      {}
+     ]
+    ],
+    [
+     [
+      "pancarta",
+      0.6,
+      0.4,
+      {
+       "w": 1.6,
+       "t": "VIVIENDA DIGNA"
+      }
+     ],
+     [
+      "p",
+      0.6,
+      0.55,
+      {}
+     ],
+     [
+      "p",
+      2.2,
+      0.55,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.6,
+      -0.9,
+      {}
+     ],
+     [
+      "carro",
+      -0.2,
+      -1.0,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "36.8"
+   ]
+  },
+  {
+   "id": "36.11-A",
+   "regla": "36.11",
+   "tipo": "hallazgo",
+   "distrito": "rio",
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Un coche se detiene junto a la acera, frente a los columpios de la ribera. El conductor habla con una mujer por la ventanilla.",
+    "La mujer se acerca a la ventanilla y hablan un rato."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Me ha preguntado cuánto cobro por subir al coche."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Solicitud de servicios sexuales retribuidos en zona de tránsito público junto a un parque infantil. Se sanciona al demandante, el conductor. Grave. A la mujer, los agentes le requieren que se abstenga de ofrecerlos en ese lugar.",
+   "dudas": "La escena se dibuja sin nada explícito. Sin investigar puede ser alguien que pregunta una dirección.",
+   "info_decisiva": true,
+   "dibujo": [
+    [
+     [
+      "coche",
+      0,
+      -0.3,
+      {}
+     ],
+     [
+      "p",
+      1.0,
+      -1.4,
+      {
+       "hair": 1
+      }
+     ]
+    ],
+    [
+     [
+      "coche",
+      0,
+      -0.3,
+      {}
+     ],
+     [
+      "p",
+      1.0,
+      -1.0,
+      {
+       "hair": 1,
+       "arm": "hold",
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "rio"
+   ],
+   "_c": [
+    "36.11"
+   ]
+  },
+  {
+   "id": "36.11-B",
+   "regla": "36.11",
+   "tipo": "hallazgo",
+   "distrito": "estacion",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un coche frena en mitad del carril y el conductor habla con alguien que está en la acera.",
+    "Los coches de detrás tienen que esquivarlo; uno se sube al bordillo para pasar."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Me ofrecía cincuenta euros por servicios sexuales. Le he dicho que no."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Lejos de lugares para menores, pero la solicitud se hace parado en mitad del carril, lo que genera un riesgo para la seguridad vial. Es el segundo supuesto del 36.11. Grave.",
+   "info_decisiva": true,
+   "dudas": "Sin la información parece un conductor que pregunta una dirección: solo la investigación revela la solicitud.",
+   "dibujo": [
+    [
+     [
+      "coche",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      1.0,
+      -1.4,
+      {
+       "cap": 1
+      }
+     ]
+    ],
+    [
+     [
+      "coche",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      1.0,
+      -1.4,
+      {
+       "cap": 1,
+       "arm": "cross"
+      }
+     ],
+     [
+      "coche",
+      1.2,
+      1.25,
+      {
+       "pita": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.11"
+   ]
+  },
+  {
+   "id": "S-36.11",
+   "regla": "36.11",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "hospital",
+   "hueco": "calzada",
+   "duracion": "continuo",
+   "beats": [
+    "Un coche aparcado en su plaza. El conductor habla por la ventanilla con una mujer.",
+    "Siguen hablando; nadie más pasa por la calle."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Me ha preguntado cuánto cobro. Aquí no molestamos a nadie, agente."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Hay solicitud, pero no se da ninguna condición del 36.11: no es cerca de lugares destinados a menores y el coche está bien aparcado, sin riesgo para la seguridad vial. No es infracción LOPSC.",
+   "info_decisiva": true,
+   "dudas": "Puede serlo de una ordenanza municipal, que entrará con su paquete.",
+   "dibujo": [
+    [
+     [
+      "coche",
+      0,
+      -0.3,
+      {}
+     ],
+     [
+      "p",
+      1.0,
+      -1.4,
+      {
+       "hair": 1
+      }
+     ]
+    ],
+    [
+     [
+      "coche",
+      0,
+      -0.3,
+      {}
+     ],
+     [
+      "p",
+      1.0,
+      -1.0,
+      {
+       "hair": 1,
+       "arm": "hold",
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.11"
+   ]
+  },
+  {
+   "id": "36.14-A",
+   "regla": "36.14",
+   "tipo": "hallazgo",
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "continuo",
+   "beats": [
+    "Un hombre de paisano con un chaleco que pone POLICÍA se pasea junto a las vallas.",
+    "La gente se aparta a su paso y le deja entrar en la zona acotada."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Comprobación: no es agente. Compró el chaleco por internet. Dice que lo lleva para que le dejen ver el paso desde dentro."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Uso público e indebido de una réplica de equipamiento policial que genera engaño sobre su condición: el público le toma por agente. No ejerce funciones de autoridad, así que no llega a infracción penal. Grave. El chaleco se interviene.",
+   "info_decisiva": true,
+   "dudas": "Si se pusiera a dar órdenes atribuyéndose carácter oficial, podría ser usurpación de funciones (vía penal). La escena lo excluye. Gemela de S-36.14 (Estación).",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.4,
+      0.3,
+      {
+       "chaleco": 1
+      }
+     ],
+     [
+      "p",
+      1.3,
+      0.4,
+      {
+       "flip": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.5,
+      0.5,
+      {}
+     ]
+    ],
+    [
+     [
+      "p",
+      0.6,
+      -1.5,
+      {
+       "chaleco": 1
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.3,
+      {
+       "flip": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.6,
+      {}
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "36.14",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "S-36.14",
+   "regla": "36.14",
+   "tipo": "senuelo",
+   "distrito": "estacion",
+   "hueco": "parada",
+   "duracion": "continuo",
+   "beats": [
+    "Un hombre de paisano con un chaleco que pone POLICÍA se pasea entre las dársenas.",
+    "Los viajeros se apartan a su paso y le dejan entrar en el andén cerrado."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Comprobación: agente de la Policía Local de paisano, asignado a la vigilancia de la estación. Placa y carné profesional en regla."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "Es un agente de servicio: el uso no es indebido. Sin uso indebido, no hay 36.14.",
+   "info_decisiva": true,
+   "dudas": "Gemela de 36.14-A (Procesión), en otro distrito para que no se comparen en la misma lámina.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.4,
+      0.3,
+      {
+       "chaleco": 1
+      }
+     ],
+     [
+      "p",
+      1.3,
+      0.4,
+      {
+       "flip": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.5,
+      0.5,
+      {}
+     ]
+    ],
+    [
+     [
+      "p",
+      0.6,
+      -1.5,
+      {
+       "chaleco": 1
+      }
+     ],
+     [
+      "p",
+      1.4,
+      0.3,
+      {
+       "flip": 1,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.6,
+      {}
+     ]
+    ]
+   ],
+   "lugares": [
+    "estacion"
+   ],
+   "_c": [
+    "36.14"
+   ]
+  },
+  {
+   "id": "36.18-A",
+   "regla": "36.18",
+   "tipo": "hallazgo",
+   "distrito": "hospital",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "En la ventana de un bajo, junto al portal, hay tres macetas con plantas de hojas alargadas.",
+    "Un vecino se asoma y las riega."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Comprobación desde la calle y con el vecino: tres plantas de cannabis en floración. Dice que son para su consumo."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Grave · art. 36",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Cultivo ilícito de cannabis en un lugar visible al público. Tres plantas para consumo propio no llegan a infracción penal. Grave. Las plantas se intervienen y la aprehensión se hace constar en acta.",
+   "info_decisiva": true,
+   "dudas": "Gemela de 36.18-B (Río).",
+   "dibujo": [
+    [
+     [
+      "macetas",
+      0.55,
+      -0.5,
+      {
+       "z": 8
+      }
+     ]
+    ],
+    [
+     [
+      "macetas",
+      0.55,
+      -0.5,
+      {
+       "z": 8
+      }
+     ],
+     [
+      "vecino",
+      0.9,
+      -0.5,
+      {
+       "z": 24
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.18",
+    "47.1#1",
+    "19.2"
+   ]
+  },
+  {
+   "id": "36.18-B",
+   "regla": "36.18",
+   "tipo": "hallazgo",
+   "distrito": "rio",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "En la ventana de un bajo del bloque de enfrente, junto al portal, hay tres macetas con plantas de hojas alargadas.",
+    "Un vecino se asoma y las riega."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Comprobación desde la calle y con el vecino: cuarenta y dos plantas de cannabis entre la ventana y la terraza del bajo, con riego automático. El vecino reconoce que vende la cosecha."
+   },
+   "sol": {
+    "via": "pen"
+   },
+   "why": "El 36.18 solo se aplica cuando el cultivo no es infracción penal. Cuarenta y dos plantas y la venta reconocida apuntan a un cultivo destinado al tráfico: la vía es penal.",
+   "info_decisiva": true,
+   "dudas": "Gemela de 36.18-A (Hospital): lo que se ve son tres macetas; el resto lo da la comprobación. El delito de tráfico se calificará en el atestado.",
+   "dibujo": [
+    [
+     [
+      "macetas",
+      0.55,
+      -0.5,
+      {
+       "z": 8
+      }
+     ]
+    ],
+    [
+     [
+      "macetas",
+      0.55,
+      -0.5,
+      {
+       "z": 8
+      }
+     ],
+     [
+      "vecino",
+      0.9,
+      -0.5,
+      {
+       "z": 24
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.18"
+   ]
+  },
+  {
+   "id": "S-36.18",
+   "regla": "36.18",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "hospital",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "Una vecina sale del portal y hace señas a la patrulla.",
+    "Señala hacia el interior del bloque."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—En el patio de dentro, el del tercero tiene plantas de marihuana. Desde la calle no se ven, pero yo las veo desde mi cocina."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "El 36.18 exige que el cultivo esté en un lugar visible al público. Un patio interior que solo se ve desde las viviendas no lo es. No es infracción del 36.18.",
+   "info_decisiva": true,
+   "dudas": "Si hubiera indicios de tráfico, sería otra historia (vía penal). Aquí no los hay.",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.3,
+      0.3,
+      {
+       "hair": 1,
+       "arm": "up"
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.3,
+      0.3,
+      {
+       "hair": 1,
+       "arm": "aim",
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "_c": [
+    "36.18"
+   ]
+  },
+  {
+   "id": "37.5-A",
+   "regla": "37.5",
+   "tipo": "hallazgo",
+   "distrito": "hospital",
+   "hueco": "parque",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un hombre con gabardina se acerca a un grupo que está junto a los bancos del jardín.",
+    "Se planta delante de ellos y se abre la gabardina; el grupo se aparta deprisa."
+   ],
+   "info": {
+    "tipo": "voz",
+    "texto": "—Iba desnudo debajo. Éramos cuatro amigas, estábamos esperando a una más."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Exhibición obscena ante adultas: no constituye infracción penal (el delito exige que sea ante menores o personas con discapacidad necesitadas de especial protección). Es el 37.5, leve.",
+   "info_decisiva": true,
+   "dudas": "Se dibuja de espaldas y sin nada explícito. Gemela de 37.5-B (Río).",
+   "dibujo": [
+    [
+     [
+      "p",
+      1.1,
+      0.1,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.5,
+      0.4,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.2,
+      0.8,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.8,
+      0.9,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.8,
+      0.6,
+      {
+       "gabardina": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      2.0,
+      0.0,
+      {
+       "hair": 1,
+       "flip": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      2.4,
+      0.5,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.1,
+      1.0,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.7,
+      0.9,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      0.6,
+      0.5,
+      {
+       "gabardina": 1,
+       "abre": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "hospital"
+   ],
+   "_c": [
+    "37.5"
+   ]
+  },
+  {
+   "id": "37.5-B",
+   "regla": "37.5",
+   "tipo": "hallazgo",
+   "distrito": "rio",
+   "hueco": "parque",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un hombre con gabardina se acerca a un grupo que está en la ribera.",
+    "Se planta delante de ellos y se abre la gabardina; el grupo se aparta deprisa."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: llama una madre. Dice que el hombre se ha exhibido en la ribera delante de sus dos hijas, de 9 y 11 años."
+   },
+   "sol": {
+    "via": "pen"
+   },
+   "why": "El 37.5 solo se aplica «cuando no constituya infracción penal». La exhibición obscena ante menores es delito: la vía es penal.",
+   "info_decisiva": true,
+   "dudas": "Se dibuja de espaldas y sin nada explícito. Gemela de 37.5-A (Hospital): solo la información dice ante quién fue.",
+   "dibujo": [
+    [
+     [
+      "p",
+      1.1,
+      0.1,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.5,
+      0.4,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.2,
+      0.8,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      1.8,
+      0.9,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.8,
+      0.6,
+      {
+       "gabardina": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      2.0,
+      0.0,
+      {
+       "hair": 1,
+       "flip": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      2.4,
+      0.5,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.1,
+      1.0,
+      {
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      2.7,
+      0.9,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      0.6,
+      0.5,
+      {
+       "gabardina": 1,
+       "abre": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "rio"
+   ],
+   "_c": [
+    "37.5"
+   ]
+  },
+  {
+   "id": "37.14-A",
+   "regla": "37.14",
+   "tipo": "hallazgo",
+   "distrito": "estacion",
+   "hueco": "portal_local",
+   "duracion": "continuo",
+   "beats": [
+    "Un joven trepa por la fachada de la estación hasta el rótulo luminoso.",
+    "Arriba, se queda quieto mientras alguien lo graba desde abajo, rodeado de curiosos."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: no consta ningún permiso. El rótulo está sujeto con anclajes viejos y mantenimiento lo tiene señalado por riesgo de caída."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Escalamiento de un edificio sin autorización y con riesgo cierto de daños a las personas (los curiosos de abajo, y él mismo) y al bien. Leve.",
+   "info_decisiva": true,
+   "dudas": "Gemela de S-37.14 (estatua de la Procesión, con permiso).",
+   "dibujo": [
+    [
+     [
+      "p",
+      0.4,
+      -0.45,
+      {
+       "z": 20,
+       "arm": "up",
+       "hood": 1
+      }
+     ],
+     [
+      "p",
+      0.9,
+      1.6,
+      {
+       "arm": "aim",
+       "item": "camara",
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      0.2,
+      1.9,
+      {}
+     ],
+     [
+      "p",
+      1.5,
+      1.8,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      0.4,
+      -0.45,
+      {
+       "z": 50,
+       "arm": "up",
+       "hood": 1
+      }
+     ],
+     [
+      "p",
+      0.9,
+      1.6,
+      {
+       "arm": "aim",
+       "item": "camara",
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      0.2,
+      1.9,
+      {}
+     ],
+     [
+      "p",
+      1.5,
+      1.8,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      1.7,
+      {
+       "cap": 1
+      }
+     ]
+    ]
+   ],
+   "fijo": [
+    [
+     "rotulo",
+     -0.6,
+     -0.5,
+     {
+      "z": 62,
+      "t": "BAR"
+     }
+    ]
+   ],
+   "lugares": [
+    "estacion"
+   ],
+   "_c": [
+    "37.14"
+   ]
+  },
+  {
+   "id": "S-37.14",
+   "regla": "37.14",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "procesion",
+   "hueco": "monumento",
+   "duracion": "continuo",
+   "beats": [
+    "Una joven trepa por la estatua del centro de la plaza hasta lo más alto.",
+    "Arriba, se queda quieta mientras alguien la graba desde abajo, rodeado de curiosos."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Permiso municipal de rodaje para un videoclip, con seguro y escalada asegurada por técnicos. Válido para hoy."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "El 37.14 exige que el escalamiento sea sin autorización. Hay permiso municipal: no es infracción.",
+   "info_decisiva": true,
+   "dudas": "Gemela de 37.14-A (fachada de la Estación, sin permiso).",
+   "dibujo": [
+    [
+     [
+      "p",
+      1.2,
+      0.9,
+      {
+       "z": 16,
+       "hair": 1,
+       "arm": "up"
+      }
+     ],
+     [
+      "p",
+      -0.6,
+      1.0,
+      {
+       "arm": "aim",
+       "item": "camara"
+      }
+     ],
+     [
+      "p",
+      -0.2,
+      1.6,
+      {}
+     ],
+     [
+      "p",
+      0.4,
+      1.9,
+      {
+       "hair": 1
+      }
+     ]
+    ],
+    [
+     [
+      "p",
+      1.2,
+      0.9,
+      {
+       "z": 46,
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      -0.6,
+      1.0,
+      {
+       "arm": "aim",
+       "item": "camara"
+      }
+     ],
+     [
+      "p",
+      -0.2,
+      1.6,
+      {}
+     ],
+     [
+      "p",
+      0.4,
+      1.9,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      2.2,
+      1.6,
+      {
+       "cap": 1,
+       "flip": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "37.14"
+   ]
+  },
+  {
+   "id": "37.15-A",
+   "regla": "37.15",
+   "tipo": "hallazgo",
+   "gemela": "36.1",
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "instantaneo",
+   "beats": [
+    "Una mujer aparta una valla del cordón para salir de la zona acotada.",
+    "La deja apoyada contra las demás y se marcha por la calle lateral."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: es el perímetro que ha montado la Policía Local para el paso. Nadie más ha pasado y la procesión no se ha visto afectada."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia"
+    ]
+   },
+   "why": "Remoción de vallas colocadas por las Fuerzas y Cuerpos de Seguridad para delimitar un perímetro de seguridad, sin consecuencias que la conviertan en grave. Leve.",
+   "info_decisiva": true,
+   "dudas": "Gemela de 36.1-C (misma lámina, pero con escena distinta: aquí una persona sola que sale) y de S-37.15 (Río, vallas de obra).",
+   "dibujo": [
+    [
+     [
+      "valla",
+      0.2,
+      -0.75,
+      {}
+     ],
+     [
+      "p",
+      0.9,
+      -1.4,
+      {
+       "hair": 1,
+       "arm": "hold",
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "valla",
+      0.5,
+      -0.55,
+      {}
+     ],
+     [
+      "p",
+      1.8,
+      1.0,
+      {
+       "hair": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "37.15"
+   ]
+  },
+  {
+   "id": "S-37.15",
+   "regla": "37.15",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "rio",
+   "hueco": "calzada",
+   "duracion": "instantaneo",
+   "beats": [
+    "Un hombre aparta dos vallas metálicas de la acera para pasar.",
+    "Las deja tiradas en el suelo; el hueco queda abierto."
+   ],
+   "info": {
+    "tipo": "radio",
+    "texto": "Central: esas vallas son de la empresa que arregla la acera. No hay ningún perímetro policial en esa calle."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "El 37.15 se refiere a vallas colocadas por las Fuerzas y Cuerpos de Seguridad. Unas vallas de obra no lo son: no hay infracción del 37.15.",
+   "info_decisiva": true,
+   "dudas": "Puede ser infracción de la ordenanza municipal de obras, que entrará con su paquete. Gemela de 37.15-A (Procesión).",
+   "dibujo": [
+    [
+     [
+      "vallaobra",
+      0.2,
+      -1.2,
+      {}
+     ],
+     [
+      "vallaobra",
+      1.9,
+      -1.2,
+      {}
+     ],
+     [
+      "p",
+      1.2,
+      -0.8,
+      {
+       "arm": "hold"
+      }
+     ]
+    ],
+    [
+     [
+      "vallacaida",
+      0.3,
+      -1.3,
+      {
+       "obra": 1
+      }
+     ],
+     [
+      "vallacaida",
+      1.9,
+      -1.1,
+      {
+       "obra": 1
+      }
+     ],
+     [
+      "p",
+      2.8,
+      -1.5,
+      {}
+     ]
+    ]
+   ],
+   "_c": [
+    "37.15"
+   ]
+  },
+  {
+   "id": "37.7-A",
+   "regla": "37.7",
+   "tipo": "hallazgo",
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "continuo",
+   "beats": [
+    "Un hombre extiende una manta en la acera con gafas de sol y bolsos.",
+    "Atiende a varios compradores entre el público de la procesión."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Comprobación: gafas y bolsos sin marca, comprados en un almacén. No tiene autorización municipal de venta."
+   },
+   "sol": {
+    "via": "adm",
+    "grav": "Leve · art. 37",
+    "acc": [
+     "Denuncia, intervención cautelar y acta"
+    ]
+   },
+   "why": "Ocupación de la vía pública para la venta ambulante no autorizada, que el propio 37.7 incluye expresamente. Leve. La mercancía se interviene.",
+   "info_decisiva": true,
+   "dudas": "Solo la parte de venta ambulante del 37.7, que es literal. La ocupación de inmuebles queda fuera hasta tener los fundamentos del TC. Gemela de 37.7-B (Estación).",
+   "dibujo": [
+    [
+     [
+      "manta",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.2,
+      {
+       "sit": 1,
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.6,
+      {
+       "flip": 1,
+       "arm": "phone"
+      }
+     ]
+    ],
+    [
+     [
+      "manta",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.2,
+      {
+       "sit": 1,
+       "cap": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.6,
+      {
+       "flip": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.9,
+      0.2,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.9,
+      {
+       "hair": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "37.7#2",
+    "47.1#1"
+   ]
+  },
+  {
+   "id": "37.7-B",
+   "regla": "37.7",
+   "tipo": "hallazgo",
+   "distrito": "estacion",
+   "hueco": "plaza",
+   "duracion": "continuo",
+   "beats": [
+    "Un hombre extiende una manta en la explanada con gafas de sol y bolsos.",
+    "Atiende a varios viajeros que se paran a mirar."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Comprobación: sesenta bolsos y gafas con logotipos de marcas de lujo, falsificados. No tiene autorización ni facturas."
+   },
+   "sol": {
+    "via": "pen"
+   },
+   "why": "La venta de productos falsificados de marcas registradas es delito contra la propiedad industrial, aunque se haga en la calle. La vía es penal; la venta ambulante sin autorización queda absorbida por el atestado.",
+   "info_decisiva": true,
+   "dudas": "Gemela de 37.7-A (Procesión). El Código Penal prevé una pena atenuada para la venta ambulante de falsificaciones, pero sigue siendo vía penal.",
+   "dibujo": [
+    [
+     [
+      "manta",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.2,
+      {
+       "sit": 1,
+       "cap": 1
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.6,
+      {
+       "flip": 1,
+       "arm": "phone"
+      }
+     ]
+    ],
+    [
+     [
+      "manta",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.2,
+      {
+       "sit": 1,
+       "cap": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.6,
+      0.6,
+      {
+       "flip": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.9,
+      0.2,
+      {
+       "hair": 1,
+       "flip": 1
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.9,
+      {
+       "hair": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "estacion"
+   ],
+   "_c": [
+    "37.7#2"
+   ]
+  },
+  {
+   "id": "S-37.7",
+   "regla": "37.7",
+   "tipo": "senuelo",
+   "condicion": true,
+   "distrito": "procesion",
+   "hueco": "recorrido",
+   "duracion": "continuo",
+   "beats": [
+    "Una mujer tiene una mesa plegable en la acera con libros y discos viejos.",
+    "Atiende a varios compradores entre el público de la procesión."
+   ],
+   "info": {
+    "tipo": "doc",
+    "texto": "Autorización municipal de venta para el mercadillo de las fiestas, con su número de puesto. Está en su sitio."
+   },
+   "sol": {
+    "senuelo": true
+   },
+   "why": "La venta ambulante solo es el 37.7 cuando no está autorizada. Tiene autorización municipal: no es infracción.",
+   "info_decisiva": true,
+   "dudas": "",
+   "dibujo": [
+    [
+     [
+      "mesaplegable",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.4,
+      {
+       "hair": 1
+      }
+     ],
+     [
+      "p",
+      1.7,
+      0.6,
+      {
+       "flip": 1
+      }
+     ]
+    ],
+    [
+     [
+      "mesaplegable",
+      0,
+      0,
+      {}
+     ],
+     [
+      "p",
+      0.6,
+      -0.4,
+      {
+       "hair": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      1.7,
+      0.6,
+      {
+       "flip": 1,
+       "arm": "hold"
+      }
+     ],
+     [
+      "p",
+      -0.4,
+      0.8,
+      {
+       "cap": 1
+      }
+     ]
+    ]
+   ],
+   "lugares": [
+    "procesion"
+   ],
+   "_c": [
+    "37.7#2"
    ]
   }
  ]

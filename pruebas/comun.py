@@ -15,7 +15,7 @@ def copia_con_gancho(origen=RAIZ, destino=None):
     p = os.path.join(destino, 'engine.js')
     s = open(p, encoding='utf8').read()
     i = s.rstrip().rfind('}')
-    s = s[:i] + 'window.T={get st(){return st},plOf,actM};\n}\n'
+    s = s[:i] + 'window.T={get st(){return st},plOf,actM,DISTRITOS};\n}\n'
     open(p, 'w', encoding='utf8').write(s)
     return destino
 

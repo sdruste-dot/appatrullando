@@ -8,7 +8,7 @@ Qué comprueba:
      modo sin conexión (con la red cortada carga menú y escena).
   2. Sincronización: exportar, importar en otro «dispositivo», no duplicar, rechazar códigos ajenos.
   3. Patrulla: «← Comisaría» con y sin sellos, investigación sin límite.
-  4. Resolución completa: en los tres distritos, en escritorio y en móvil, cada viñeta se sella en su
+  4. Resolución completa: en todos los distritos del juego, en escritorio y en móvil, cada viñeta se sella en su
      pase con un clic real, se rellena el expediente con los botones y se cierra el servicio.
      Todas tienen que salir correctas. En móvil, si una persona queda fuera del encuadre de lectura,
      se pulsa ⤢ (lámina entera) y tiene que quedar a la vista.
@@ -145,7 +145,9 @@ async def prueba_resolucion(b, w, h):
     print(f'\n4. Resolución completa ({etiqueta})')
     ctx, pg = await nueva(b, w, h)
     await entrar(pg)
-    for did in ['estacion', 'rio', 'hospital']:
+    distritos = await pg.evaluate('T.DISTRITOS.map(d=>d.id)')
+    R.ok(len(distritos) >= 4, f'distritos en el juego: {distritos}')
+    for did in distritos:
         await pg.evaluate("localStorage.removeItem('inv5.cola');Object.keys(localStorage).filter(k=>k.startsWith('inv5.distrito')).forEach(k=>localStorage.removeItem(k))")
         await pg.goto(U)
         await pg.wait_for_timeout(800)

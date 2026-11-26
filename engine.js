@@ -32,6 +32,9 @@ function person(sx,sy,o={}){
  if(o.sit)g+=`<path class="ln" d="M-4,-12 L-10,-11 L-10,0 M3,-12 L-4,-11 L-4,0"/>`;
  else g+=`<path class="ln" d="M-3,-14 L-4,0 M3,-14 L4,0"/>`;
  g+=`<rect x="-6" y="${-29+lift}" width="12" height="16" rx="4" fill="${dk}"/>`;
+ if(o.chaleco)g+=`<rect x="-6.5" y="${-28+lift}" width="13" height="13" rx="2" fill="#efe3b0"/><path class="ln" style="stroke:#7d776b;stroke-width:1.4" d="M-6,${-20+lift} h12"/><text x="-5.6" y="${-23+lift}" font-size="3.6" font-weight="800">POLICÍA</text>`;
+ if(o.gabardina)g+=o.abre?`<path d="M-6,${-28+lift} L-19,${-24+lift} L-17,${-5+lift} L-5,${-9+lift} Z" fill="#7d776b"/><path d="M6,${-28+lift} L19,${-24+lift} L17,${-5+lift} L5,${-9+lift} Z" fill="#7d776b"/>`:`<path d="M-7,${-28+lift} L7,${-28+lift} L8,${-5+lift} L-8,${-5+lift} Z" fill="#7d776b"/>`;
+ if(o.tunica)g+=`<path d="M-7,${-28+lift} L7,${-28+lift} L9,0 L-9,0 Z" fill="#2b303b"/>`;
  if(o.tec)g+=`<path class="ln" style="stroke-width:1.4" d="M-5,${-22+lift} h10"/>`;
  const sh=-26+lift;
  const arms={none:`M-6,${sh} L-8,${sh+11} M6,${sh} L8,${sh+11}`,up:`M-6,${sh} L-8,${sh+11} M6,${sh} L12,${sh-11}`,aim:`M-6,${sh} L-8,${sh+11} M6,${sh} L15,${sh-3}`,
@@ -55,6 +58,11 @@ function person(sx,sy,o={}){
  if(it==='lata')g+=`<rect x="${hand[0]-1.5}" y="${hand[1]-6}" width="3.5" height="6" fill="#fff"/>`;
  if(it==='liar')g+=`<rect x="${hand[0]-4}" y="${hand[1]-2}" width="8" height="2.6" fill="#fff"/>`;
  if(it==='porro')g+=`<path class="ln" style="stroke-width:1.8" d="M${hand[0]},${hand[1]} l5,-2"/><circle cx="${hand[0]+5.5}" cy="${hand[1]-2.2}" r="1.2" fill="#c8102e" style="stroke:none"/>`;
+ if(it==='bengala')g+=`<path class="ln" style="stroke-width:2.4" d="M${hand[0]},${hand[1]+2} l2,-9"/><circle cx="${hand[0]+2}" cy="${hand[1]-8}" r="4.5" fill="#c8102e" style="stroke:none"/><circle cx="${hand[0]+2}" cy="${hand[1]-8}" r="2" fill="#fff" style="stroke:none"/>`;
+ if(it==='tambor')g+=`<ellipse cx="0" cy="${-16+lift}" rx="9" ry="3.5" fill="#fff"/><path d="M-9,${-16+lift} v7 a9,3.5 0 0 0 18,0 v-7" fill="#c8102e"/><path class="ln" d="M${hand[0]},${hand[1]} l-6,-6"/>`;
+ if(it==='megafono')g+=`<path d="M${hand[0]},${hand[1]-1} l9,-4 v10 z" fill="#fff"/>`;
+ if(it==='camara')g+=`<rect x="${hand[0]-3}" y="${hand[1]-4}" width="9" height="7" rx="1" fill="#161616"/>`;
+ if(it==='cirio')g+=`<path class="ln" style="stroke:#fff;stroke-width:2.4" d="M${hand[0]},${hand[1]+3} v-14"/><circle cx="${hand[0]}" cy="${hand[1]-12}" r="1.8" fill="#c8102e" style="stroke:none"/>`;
  if(o.arm==='phone')g+=`<rect x="-2" y="${sh+3}" width="5" height="7" fill="#161616"/>`;
  const hy=-34+lift;
  if(o.hood)g+=`<circle cx="0" cy="${hy}" r="6.5" fill="#3b3b3b"/><ellipse cx="1.5" cy="${hy+0.5}" rx="2.6" ry="3" fill="#fff"/>`;
@@ -64,7 +72,7 @@ function person(sx,sy,o={}){
  if(o.bombero)g+=`<path d="M-6,${hy-1} q6,-10 12,0 z" fill="#161616"/><path class="ln" style="stroke:#fff;stroke-width:1.4" d="M-5,${-19+lift} h10"/>`;
  if(o.bowler)g+=`<path d="M-4.5,${hy-2} q0,-8 4.5,-8 q4.5,0 4.5,8 z" fill="#161616"/><path class="ln" style="stroke-width:2" d="M-8,${hy-2} h16"/>`;
  if(o.hair)g+=`<path d="M-5,${hy} q0,-7 5,-6 q5,-1 5,6 q-2,-3 -5,-3 q-3,0 -5,3 z" fill="#161616"/>`;
- return `<g transform="translate(${f1(sx)},${f1(sy)}) scale(${o.flip?-s:s},${s})">${g}</g>`;
+ return `<g transform="translate(${f1(sx)},${f1(sy)}) scale(${o.flip?-s:s},${s})${o.caida?' rotate(-82)':''}">${g}</g>`;
 }
 function bubble(x,y,txt){const w=Math.round(txt.length*5.3+18),bx=x-10,by=y-30;
  return `<g class="bub"><path d="M${bx},${by} h${w} v20 h-${w-22} l-6,8 l0,-8 h-16 z" fill="#fff" style="stroke:#161616"/><text x="${bx+9}" y="${by+14}" font-size="11" font-weight="700" style="fill:#161616">${esc(txt)}</text></g>`}
@@ -94,6 +102,22 @@ const KIT={
  perro:(x,y,o)=>{const c=P(x,y),k=o.g?1.4:1;return `<g transform="translate(${f1(c[0])},${f1(c[1])}) scale(${o.flip?-k:k},${k})"><ellipse cx="0" cy="-8" rx="9" ry="5" fill="${o.g?'#161616':'#fff'}"/><circle cx="9" cy="-13" r="4.5" fill="${o.g?'#161616':'#fff'}"/><path class="ln" d="M-6,-5 v6 M6,-5 v6 M-9,-9 l-4,-4"/></g>`},
  cartel:(x,y,o)=>{const c=P(x,y);return `<path class="ln" d="M${f1(c[0])},${f1(c[1])} v-40"/><rect x="${f1(c[0]-26)}" y="${f1(c[1]-58)}" width="52" height="18" fill="#fff"/><text x="${f1(c[0]-22)}" y="${f1(c[1]-45)}" font-size="8.5" font-weight="700">${esc(o.t||'')}</text>`},
  valla:(x,y)=>[0,0.6,1.2,1.8].map(d=>line(P(x+d,y),P(x+d,y,14))).join('')+line(P(x,y,12),P(x+1.8,y,12))+line(P(x,y,5),P(x+1.8,y,5)),
+ /* --- kit v0.9 (lote 3) --- */
+ pancarta:(x,y,o)=>{const w=o.w||1.6;if(o.caida)return poly([P(x,y),P(x+w,y+0.2),P(x+w,y+0.6),P(x,y+0.4)],'#fff')+sign(x+0.2,y+0.3,0,esc(o.t||''),6);
+  return line(P(x,y),P(x,y,36),'stroke-width:2')+line(P(x+w,y),P(x+w,y,36),'stroke-width:2')+poly([P(x,y,20),P(x+w,y,20),P(x+w,y,35),P(x,y,35)],'#fff')+sign(x+0.15,y,24,esc(o.t||''),7)},
+ estallido:(x,y,o)=>{const c=P(x,y,o.z||14),k=o.s||1;let d='';for(let i=0;i<10;i++){const a=i*Math.PI/5,r1=4*k,r2=(i%2?11:16)*k;d+=`M${f1(c[0]+Math.cos(a)*r1)},${f1(c[1]+Math.sin(a)*r1)} L${f1(c[0]+Math.cos(a)*r2)},${f1(c[1]+Math.sin(a)*r2)} `}
+  return `<path class="ln" style="stroke:#c8102e;stroke-width:2.2" d="${d}"/><circle cx="${f1(c[0])}" cy="${f1(c[1])}" r="${f1(3.5*k)}" fill="#fff" style="stroke:#c8102e"/>`},
+ humorojo:(x,y,o)=>{const c=P(x,y,o.z||30);return `<path class="ln" style="stroke:#d6697a;stroke-width:3" d="M${f1(c[0])},${f1(c[1])} q-12,-12 -2,-22 q12,-10 0,-24 q-8,-10 6,-18"/><path class="ln" style="stroke:#d6697a;stroke-width:2" d="M${f1(c[0]+10)},${f1(c[1]-6)} q10,-12 0,-26"/>`},
+ vallacaida:(x,y,o)=>{let s=poly([P(x,y),P(x+1.8,y),P(x+1.8,y+0.35),P(x,y+0.35)],'none')+[0,0.6,1.2,1.8].map(d=>line(P(x+d,y),P(x+d,y+0.35))).join('');
+  if(o.obra)s+=line(P(x+0.3,y+0.17),P(x+1.5,y+0.17),'stroke:#c8102e;stroke-width:3');return s},
+ manta:(x,y)=>{let s=poly([P(x,y),P(x+1.6,y),P(x+1.6,y+1.0),P(x,y+1.0)],'#e7e2d6');[[0.3,0.25],[0.8,0.3],[1.2,0.6],[0.5,0.7]].forEach(([a,b],i)=>{const c=P(x+a,y+b);s+=i%2?`<rect x="${f1(c[0]-5)}" y="${f1(c[1]-6)}" width="10" height="7" rx="1" fill="#fff"/>`:`<path class="ln" style="stroke-width:2" d="M${f1(c[0]-6)},${f1(c[1]-1)} h4 m3,0 h4"/>`});return s},
+ mesaplegable:(x,y)=>{let s=box(x,y,1.4,0.7,1,12,['#fff','#e4dfd3','#f0ece2'])+line(P(x+0.1,y+0.7),P(x+0.1,y+0.7,12))+line(P(x+1.3,y+0.7),P(x+1.3,y+0.7,12));
+  [[0.2,0.2],[0.6,0.3],[1.0,0.2]].forEach(([a,b])=>{const c=P(x+a,y+b,13);s+=`<rect x="${f1(c[0]-4)}" y="${f1(c[1]-6)}" width="8" height="6" fill="#d9d3c6"/>`});return s},
+ macetas:(x,y,o)=>{const z=o.z||10;let s=poly([P(x-0.1,y,z),P(x+1.2,y,z),P(x+1.2,y,z+2),P(x-0.1,y,z+2)],'#e4dfd3');
+  [0.15,0.55,0.95].forEach(d=>{const c=P(x+d,y,z+2);s+=`<path d="M${f1(c[0]-3.5)},${f1(c[1])} h7 l-1,-6 h-5 z" fill="#c8a882"/><path class="ln" style="stroke:#5f7a4e;stroke-width:1.6" d="M${f1(c[0])},${f1(c[1]-6)} l-6,-12 M${f1(c[0])},${f1(c[1]-6)} l1,-15 M${f1(c[0])},${f1(c[1]-6)} l7,-11 M${f1(c[0])},${f1(c[1]-6)} l-9,-5 M${f1(c[0])},${f1(c[1]-6)} l9,-4"/>`});return s},
+ carro:(x,y)=>{const c=P(x,y);return `<path d="M${f1(c[0]-4)},${f1(c[1]-18)} h9 l-1,15 h-7 z" fill="#c8102e"/><path class="ln" d="M${f1(c[0]+5)},${f1(c[1]-18)} l3,-6"/><circle cx="${f1(c[0])}" cy="${f1(c[1]-1)}" r="2.5" fill="#161616"/>`},
+ ruido:(x,y,o)=>{const c=P(x,y,o.z||40);return `<path class="ln" style="stroke-width:1.8" d="M${f1(c[0]-14)},${f1(c[1])} l4,-6 l4,6 l4,-6 l4,6 l4,-6 l4,6 M${f1(c[0]-10)},${f1(c[1]-10)} l4,-6 l4,6 l4,-6 l4,6"/>`},
+ rotulo:(x,y,o)=>{const z=o.z||60;return poly([P(x,y,z),P(x+1.6,y,z),P(x+1.6,y,z+12),P(x,y,z+12)],'#efe3b0')+sign(x+0.15,y,z+3,esc(o.t||'BAR'),8)},
  /* --- kit v0.6 (lote 2) --- */
  bus:(x,y,o)=>{let s=box(x,y,3.8,1.1,26,3,['#fff','#e4dfd3','#fff']);
   for(let d=0.25;d<3.2;d+=0.62)s+=poly([P(x+d,y+1.1,15),P(x+d+0.45,y+1.1,15),P(x+d+0.45,y+1.1,24),P(x+d,y+1.1,24)],'#f0ece2');
@@ -130,7 +154,7 @@ const KIT={
  panel:(x,y)=>line(P(x,y),P(x,y,20),'stroke-width:2')+poly([P(x-0.5,y,20),P(x+0.5,y,20),P(x+0.5,y,40),P(x-0.5,y,40)],'#fff')+sign(x-0.35,y,27,'INFO',7),
  bici:(x,y,o)=>{const c=P(x,y);const f=o.flip?-1:1;return `<g transform="translate(${f1(c[0])},${f1(c[1])}) scale(${f},1)"><circle cx="-9" cy="-5" r="6" fill="none"/><circle cx="9" cy="-5" r="6" fill="none"/><path class="ln" d="M-9,-5 L-2,-14 L7,-14 L9,-5 M-2,-14 L0,-5"/></g>`+person(c[0],c[1]-4,{arm:'aim',flip:o.flip,cap:1})},
 };
-const NOANCH=new Set(['humo','cinta','cartel','valla','latas','cont','camilla','haz','heli','neum','vallaobra','altavoz','mesavolcada','silla','sofa','nevera','pintada','carteles','cubo','latasuelo','bolsita','humillo','vecino','buzon','panel']);
+const NOANCH=new Set(['pancarta','estallido','humorojo','vallacaida','manta','mesaplegable','macetas','carro','ruido','rotulo','humo','cinta','cartel','valla','latas','cont','camilla','haz','heli','neum','vallaobra','altavoz','mesavolcada','silla','sofa','nevera','pintada','carteles','cubo','latasuelo','bolsita','humillo','vecino','buzon','panel']);
 function anchorPts(el,x,y){const c=P(x,y);if(el==='coche'||el==='ambu')return [c,P(x+2.3,y+1)];if(el==='bomberos')return [c,P(x+3,y+1)];if(el==='bus')return [c,P(x+3.8,y+1.1)];if(el==='camion')return [c,P(x+3.7,y+1.1)];if(NOANCH.has(el))return [];return [c]}
 
 /* ---------- lugares ---------- */
@@ -140,7 +164,7 @@ const sign=(x,y,z,t,fs=10)=>{const c=P(x,y,z);return `<text x="${f1(c[0])}" y="$
 const road=()=>poly([P(-2.5,12),P(16,12),P(16,15.5),P(-2.5,15.5)],'#d9d3c6')+line(P(-2.5,13.75),P(16,13.75),'stroke-dasharray:10 8')+poly([P(-2.5,15.5),P(16,15.5),P(16,16.6),P(-2.5,16.6)],'#ebe6da');
 const LUGARES={
  estacion:{nombre:'Estación de autobuses',noche:true,turno:'noche',horas:['23:50','00:00','00:10'],
-  huecos:{parada:[[1.6,7.4],[6.6,7.4],[11.6,7.4]],calzada:[[0.4,13.1],[4.4,13.1],[8.4,13.1],[12.4,13.1]],portal_local:[[3.4,0.5],[9.4,0.5]],terraza:[[13.2,1.9]],plaza:[[5,10.2],[10,10.4]],parque:[[14.6,9.6]]},
+  huecos:{parada:[[1.6,7.4],[6.6,7.4],[11.6,7.4],[10.2,8.2]],calzada:[[0.4,13.1],[4.4,13.1],[8.4,13.1],[12.4,13.1],[-2.1,13.1]],portal_local:[[3.4,0.5],[9.4,0.5],[6.4,0.5],[0.8,0.5]],terraza:[[13.2,1.9]],plaza:[[5,10.2],[10,10.4],[2.4,10.0],[7.6,10.2]],parque:[[14.6,9.6]]},
   suelo(){let s=poly([P(-2.5,0),P(0,0),P(0,12),P(-2.5,12)],'#ebe6da')+poly([P(0,0),P(16,0),P(16,12),P(0,12)],'#f3efe6');
    for(let k=0;k<3;k++){const y0=5.6,x0=0.6+k*5;s+=poly([P(x0,y0),P(x0+4,y0),P(x0+4,y0+3.4),P(x0,y0+3.4)],'#e7e2d6');[0,1,2,3].forEach(d=>{s+=line(P(x0+d+0.5,y0),P(x0+d+0.5,y0+3.4),'stroke:#bfb7a5')})}
    s+=poly([P(13.6,8.6),P(16,8.6),P(16,11.4),P(13.6,11.4)],'#eef0e6');
@@ -158,7 +182,7 @@ const LUGARES={
    return L},
   fig:[[8.5,3.4],[12.6,4],[6,10.8],[2.2,10.6],[11,9.8],[14.6,3.6]],bombin:[[15.2,0.8],[0.6,10.4],[8,9.9]],gato:[4,-2.6,70]},
  rio:{nombre:'Paseo del río',noche:false,turno:'tarde',horas:['18:10','18:20','18:30'],
-  huecos:{parque:[[2.4,2.2],[6.6,2.4],[9.6,1.6]],plaza:[[4.4,8.6],[13,9]],calzada:[[0.6,13.1],[5.4,13.1],[10.4,13.1]],terraza:[[8.6,8.8]],parada:[[14.2,11]],portal_local:[[12.2,0.5],[14.6,0.5]]},
+  huecos:{parque:[[2.4,2.2],[6.6,2.4],[9.6,1.6],[4.2,3.0],[11.2,2.4]],plaza:[[4.4,8.6],[13,9],[1.8,9.4],[6.4,10.6],[11.6,8.6]],calzada:[[0.6,13.1],[5.4,13.1],[10.4,13.1],[-2.0,13.1],[8.0,13.1],[13.0,13.1]],terraza:[[8.6,8.8]],parada:[[14.2,11]],portal_local:[[12.2,0.5],[14.6,0.5],[13.4,0.6]]},
   suelo(){let s=poly([P(-2.5,0),P(0,0),P(0,12),P(-2.5,12)],'#ebe6da');
    s+=poly([P(0,0),P(16,0),P(16,4.3),P(0,4.3)],'#eef0e6');
    for(let i=0;i<50;i++){const x=0.6+((i*37)%150)/10,y=0.4+((i*53)%37)/10;const c=P(x,y);s+=`<path class="ln" style="stroke:#a9ad98" d="M${f1(c[0])},${f1(c[1])} l2,-4 l2,4"/>`}
@@ -185,9 +209,50 @@ const LUGARES={
    L.push({z:24.3,s:marquesina(13.6,10.6,2.4)});
    return L},
   fig:[[6.4,10.4],[11.4,10.2],[2.8,9.6],[15.2,8.4],[9.6,1.6],[3.6,3.4]],bombin:[[11.2,3.6],[15.4,9.6],[7.4,11]],gato:[12.4,-2.2,96]},
+ /* v0.9: cuarto lugar. Día de procesión en el casco viejo. Topología propia (requisito 11):
+    sin calle con tráfico delante; un recorrido peatonal cruza a media profundidad entre vallas policiales,
+    fachadas pegadas a la calle e iglesia al fondo, placita con estatua delante a la derecha y calle lateral a la izquierda.
+    El paso avanza entre pases: es AMBIENTE del lugar (no seleccionable), no mobiliario. */
+ procesion:{nombre:'Día de procesión en el casco viejo',noche:false,turno:'mediodía',pal:'piedra',horas:['12:40','12:50','13:00'],
+  huecos:{recorrido:[[-1.8,8.7],[0.6,8.7],[3.0,8.7],[5.4,8.7],[7.8,8.7],[10.2,8.7],[12.6,8.7]],monumento:[[12.2,12.4]],plaza:[[9.8,13.6],[14.6,14.4],[1.2,11.8],[6.0,12.2]]},
+  suelo(){let s=poly([P(-2.5,-2),P(16,-2),P(16,16.6),P(-2.5,16.6)],'#ebe6da');
+   s+=poly([P(-2.5,4.2),P(16,4.2),P(16,7.8),P(-2.5,7.8)],'#e4dfd3');
+   for(let x=-2;x<16;x+=0.9)s+=line(P(x,4.3),P(x,7.7),'stroke:#d9d3c6');
+   for(let y=4.6;y<7.8;y+=0.9)s+=line(P(-2.4,y),P(15.9,y),'stroke:#d9d3c6');
+   s+=poly([P(10.4,10.6),P(16,10.6),P(16,16.6),P(10.4,16.6)],'#f3efe6');
+   for(let k=0;k<5;k++)s+=line(P(10.6+k*1.1,10.8),P(10.6+k*1.1,16.4),'stroke:#e4dfd3');
+   s+=poly([P(3.2,9.6),P(5.4,9.6),P(5.4,16.6),P(3.2,16.6)],'#e4dfd3');
+   return s},
+  edificios(){let s='';
+   [[-2.5,2.4,110],[0.2,3.0,96],[3.4,2.4,128]].forEach(([x,w,h])=>{s+=box(x,-1.6,w,4,h,0,['#fff','#ece7dc','#fff'])+winFront(x,x+w,2.4,h,false);
+    for(let d=0.4;d<w-0.3;d+=1.1)s+=line(P(x+d,2.4,46),P(x+d+0.7,2.4,46),'stroke-width:2')+line(P(x+d,2.4,46),P(x+d,2.4,52))+line(P(x+d+0.7,2.4,46),P(x+d+0.7,2.4,52))});
+   s+=box(6,-3.4,4.4,5.8,118,0,['#fff','#e7e2d6','#fff'])+box(6.6,-3,1.6,1.6,236,0,['#fff','#e7e2d6','#fff']);
+   const ro=P(8.2,2.4,82);s+=`<circle cx="${f1(ro[0])}" cy="${f1(ro[1])}" r="13" fill="#e4dfd3"/><circle cx="${f1(ro[0])}" cy="${f1(ro[1])}" r="5" fill="#fff"/>`;
+   s+=poly([P(7.6,2.4,0),P(8.8,2.4,0),P(8.8,2.4,34),P(7.6,2.4,34)],'#d9d3c6');
+   const cp=P(7.4,-2.2,236);s+=`<path class="ln" d="M${f1(cp[0])},${f1(cp[1])} v-22 M${f1(cp[0]-6)},${f1(cp[1]-15)} h12"/>`;
+   [[10.6,2.6,104],[13.4,2.6,120]].forEach(([x,w,h])=>{s+=box(x,-1.6,w,4,h,0,['#fff','#ece7dc','#fff'])+winFront(x,x+w,2.4,h,false);
+    for(let d=0.4;d<w-0.3;d+=1.1)s+=line(P(x+d,2.4,46),P(x+d+0.7,2.4,46),'stroke-width:2')+line(P(x+d,2.4,46),P(x+d,2.4,52))+line(P(x+d+0.7,2.4,46),P(x+d+0.7,2.4,52))});
+   return s},
+  mobiliario(){const L=[];
+   const cordon=y=>{let t='';for(let x=-2.4;x<15.9;x+=0.6)t+=line(P(x,y),P(x,y,13));return t+line(P(-2.4,y,12),P(15.9,y,12))+line(P(-2.4,y,5),P(15.9,y,5))};
+   L.push({z:-2.4+4.2+6,s:cordon(4.2)});
+   for(let x=-2.4;x<15.9;x+=3.6){const xe=Math.min(x+3.6,15.9);let t='';for(let xx=x;xx<xe;xx+=0.6)t+=line(P(xx,7.8),P(xx,7.8,13));t+=line(P(x,7.8,12),P(xe,7.8,12))+line(P(x,7.8,5),P(xe,7.8,5));L.push({z:x+7.8+0.3,s:t})}
+   const e=[12.8,12.0];L.push({z:e[0]+e[1]-0.4,s:box(e[0],e[1],1.2,1.2,30,0,['#e4dfd3','#d9d3c6','#ece7dc'])+(c=>`<path d="M${f1(c[0]-14)},${f1(c[1])} q4,-26 16,-30 q10,-2 12,10 l-4,2 q-2,-6 -8,-4 l2,22 z" fill="#5a4a3a"/><circle cx="${f1(c[0]+2)}" cy="${f1(c[1]-34)}" r="5" fill="#5a4a3a"/>`)(P(e[0]+0.6,e[1]+0.6,30))});
+   [[11,14.8],[15,11.6]].forEach(([x,y])=>L.push({z:x+y-0.5,s:banco(x-0.6,y-0.8)}));
+   [[1.6,14.2],[7.0,14.6]].forEach(([x,y])=>L.push({z:x+y,s:box(x-0.7,y-0.6,1.4,1.2,12,0,['#e4dfd3','#d9d3c6','#eef0e6'])+tree(x,y)}));
+   [[-1.6,9.8],[9.6,9.8],[15.4,9.8]].forEach(([x,y])=>L.push({z:x+y,s:farola(x,y)}));
+   return L},
+  ambiente(m){const x=1.2+m*4.6,y=5.4,L=[];
+   L.push({z:x+y+1.6,s:box(x,y,2.6,1.4,14,6,['#2b303b','#1b1d24','#3b3b3b'])+box(x+0.2,y+0.2,2.2,1.0,4,20,['#efe3b0','#d9c77a','#f6eccb'])
+    +[[0.3,0.3],[2.3,0.3],[0.3,1.1],[2.3,1.1]].map(([a,b])=>line(P(x+a,y+b,24),P(x+a,y+b,56))).join('')
+    +poly([P(x+0.2,y+0.2,56),P(x+2.4,y+0.2,56),P(x+2.4,y+1.2,56),P(x+0.2,y+1.2,56)],'#c8102e')
+    +[0.6,1.0,1.4,1.8].map(d=>line(P(x+d,y+0.7,24),P(x+d,y+0.7,32),'stroke:#fff;stroke-width:2')).join('')});
+   [[3.2,0.3],[3.8,1.1],[4.4,0.4]].forEach(([a,b],i)=>{const c=P(x+a,y+b);L.push({z:x+a+y+b,s:person(c[0],c[1],{tunica:1,hood:1,arm:'hold',item:i===1?'':'cirio'})+(i===1?line(P(x+a+0.2,y+b),P(x+a+0.2,y+b,60),'stroke-width:2')+poly([P(x+a+0.2,y+b,44),P(x+a+0.9,y+b,44),P(x+a+0.9,y+b,58),P(x+a+0.2,y+b,58)],'#c8102e'):'')})});
+   return L},
+  fig:[[1.6,3.2],[12.4,3.3],[4.2,9.0],[9.8,9.0],[6.4,12.6],[14.8,12.8]],bombin:[[15.4,3.1],[1.4,9.1],[8.6,14.4]],gato:[1.2,-0.4,96]},
  /* v0.6: tercer lugar. Glorieta del hospital, turno de mañana. */
  hospital:{nombre:'Glorieta del hospital',noche:false,turno:'mañana',manana:true,horas:['11:10','11:20','11:30'],
-  huecos:{portal_local:[[1.2,0.5],[3.2,0.5]],parque:[[1.6,5.4],[3.8,7.6]],plaza:[[7.6,5.6],[10.4,8.4]],terraza:[[13.4,7.0]],parada:[[6.0,11.0],[8.2,11.0],[10.4,11.0]],calzada:[[0.2,13.1],[4.4,13.1],[8.6,13.1],[12.2,13.1]]},
+  huecos:{portal_local:[[1.2,0.5],[3.2,0.5],[5.0,0.5]],parque:[[1.6,5.4],[3.8,7.6],[4.6,6.2]],plaza:[[7.6,5.6],[10.4,8.4]],terraza:[[13.4,7.0]],parada:[[6.0,11.0],[8.2,11.0],[10.4,11.0]],calzada:[[0.2,13.1],[4.4,13.1],[8.6,13.1],[12.2,13.1],[-2.2,13.1]]},
   suelo(){let s=poly([P(-2.5,0),P(0,0),P(0,12),P(-2.5,12)],'#ebe6da')+poly([P(0,0),P(16,0),P(16,12),P(0,12)],'#f3efe6');
    s+=poly([P(0.4,3.6),P(5.6,3.6),P(5.6,9.4),P(0.4,9.4)],'#eef0e6');
    for(let i=0;i<34;i++){const x=0.8+((i*37)%48)/10,y=3.9+((i*53)%52)/10;const c=P(x,y);s+=`<path class="ln" style="stroke:#a9ad98" d="M${f1(c[0])},${f1(c[1])} l2,-4 l2,4"/>`}
@@ -197,9 +262,9 @@ const LUGARES={
    s+=road();for(let k=0;k<6;k++){const y=12.25+k*0.55;s+=poly([P(6.9,y),P(8.3,y),P(8.3,y+0.3),P(6.9,y+0.3)],'#fff')}
    return s},
   edificios(){let s=box(-2.6,0,2.6,12,110,0,['#fff','#ece7dc','#fff'])+winSide(0,12,0,110,false);
-   s+=box(0,-3,4.4,3,90)+winFront(0,4.4,0,90,false);
-   s+=poly([P(0.8,0,0),P(1.6,0,0),P(1.6,0,22),P(0.8,0,22)],'#e4dfd3')+poly([P(2.8,0,0),P(3.6,0,0),P(3.6,0,22),P(2.8,0,22)],'#e4dfd3');
-   s+=box(4.6,-4,11.4,4,124)+winFront(4.6,16,0,124,false);
+   s+=box(0,-3,5.8,3,90)+winFront(0,5.8,0,90,false);
+   s+=poly([P(0.8,0,0),P(1.6,0,0),P(1.6,0,22),P(0.8,0,22)],'#e4dfd3')+poly([P(2.8,0,0),P(3.6,0,0),P(3.6,0,22),P(2.8,0,22)],'#e4dfd3')+poly([P(4.6,0,0),P(5.4,0,0),P(5.4,0,22),P(4.6,0,22)],'#e4dfd3');
+   s+=box(6,-4,10,4,124)+winFront(6,16,0,124,false);
    s+=poly([P(8.6,0,0),P(11.4,0,0),P(11.4,0,26),P(8.6,0,26)],'#d9d3c6');
    s+=sign(8.4,0,40,'HOSPITAL',15);
    const cr=P(13.6,0,40);s+=`<path class="ln" style="stroke:#c8102e;stroke-width:5" d="M${f1(cr[0]-9)},${f1(cr[1])} h18 M${f1(cr[0])},${f1(cr[1]-9)} v18"/>`;
@@ -216,11 +281,12 @@ const LUGARES={
    return L},
   fig:[[6.4,3.0],[11.8,4.8],[9.0,7.0],[2.4,10.4],[12.2,9.6],[6.8,8.8]],bombin:[[15.4,2.6],[0.6,10.8],[11.6,6.2]],gato:[1.0,-1.6,90]}
 };
-const FALLBACK={plaza:['parque'],parque:['plaza'],parada:['plaza'],terraza:['plaza']};
+const FALLBACK={plaza:['parque'],parque:['plaza'],parada:['plaza'],terraza:['plaza'],recorrido:['plaza'],monumento:['plaza']};
 const DISTRITOS=[
- {id:'estacion',lugar:'estacion',ids:['36.10-B','37.2-A','37.2-B','36.6-A','37.4-B','36.5-A','36.5-B','37.17-A','37.17-B','S-37.2','S-36.5','S-37.6'],seed:5101},
- {id:'rio',lugar:'rio',ids:['36.10-A','36.6-B','37.4-A','36.5-C','37.16-A','37.16-B','37.6-A','36.3-A','S-37.4','S-37.16','S-37.17'],seed:7203},
- {id:'hospital',lugar:'hospital',ids:['35.4-A','35.4-B','37.6-B','36.3-B','36.16-A','36.16-B','37.13-A','37.13-B','S-36.3','S-36.16'],seed:9307}
+ {id:'estacion',lugar:'estacion',ids:['36.10-B','37.2-A','37.2-B','36.6-A','37.4-B','36.5-A','36.5-B','37.17-A','37.17-B','36.8-B','36.11-B','37.14-A','37.7-B','S-37.2','S-36.5','S-37.6','S-36.14'],seed:5101},
+ {id:'rio',lugar:'rio',ids:['36.10-A','36.6-B','37.4-A','36.5-C','37.16-A','37.16-B','37.6-A','36.3-A','36.8-A','36.11-A','37.5-B','36.18-B','S-37.4','S-37.16','S-37.17','S-36.8','S-37.15'],seed:7203},
+ {id:'hospital',lugar:'hospital',ids:['35.4-A','35.4-B','37.6-B','36.3-B','36.16-A','36.16-B','37.13-A','37.13-B','36.18-A','37.5-A','S-36.3','S-36.16','S-36.11','S-36.18'],seed:9307},
+ {id:'procesion',lugar:'procesion',ids:['36.1-A','36.1-B','36.1-C','36.14-A','37.15-A','37.7-A','S-36.1','S-37.14','S-37.7'],seed:4411}
 ];
 
 /* ---------- composición ---------- */
@@ -240,7 +306,7 @@ function buildMission(tipo,did){
  const cola=load(KC,[]);const seed=Date.now()%100000,r=rng(seed);const used=new Set(),items=[];
  const grupos={};cola.forEach(c=>{(grupos[c.regla+'|'+c.tipo]=grupos[c.regla+'|'+c.tipo]||[]).push(c.vid)});
  /* v0.6: algunas viñetas están atadas a un lugar (campo «lugares»). Se elige el lugar que puede alojar más rescates. */
- const cabe=(v,lid)=>!v.lugares||v.lugares.includes(lid);
+ const cabe=(v,lid)=>(!v.lugares||v.lugares.includes(lid))&&[v.hueco,...(FALLBACK[v.hueco]||[])].some(t=>LUGARES[lid].huecos[t]&&LUGARES[lid].huecos[t].length);
  const lids=shuffle(Object.keys(LUGARES),r);const cubre=lid=>Object.keys(grupos).filter(key=>{const [rg,tp]=key.split('|');return all.some(v=>v.regla===rg&&v.tipo===tp&&cabe(v,lid))}).length;
  const lid=lids.reduce((b,l)=>cubre(l)>cubre(b)?l:b,lids[0]);const lug=LUGARES[lid];
  for(const key in grupos){const [rg,tp]=key.split('|');const fall=grupos[key];
@@ -269,7 +335,8 @@ const H=m=>st.mis.lug.horas[m];
 /* ---------- render ---------- */
 const NOCHE=[['#f3efe6','#1b1d24'],['#f6f2ea','#1b1d24'],['#ebe6da','#15171d'],['#e7e2d6','#23262f'],['#eef0e6','#1a2320'],['#dfe6ea','#172029'],['#d9d3c6','#2b2e38'],['#e4dfd3','#2e313b'],['#ece7dc','#262933'],['#f0ece2','#2a2d36'],['#fff','#20232b'],['#161616','#e9e4d8'],['#efe3b0','#d9c77a'],['#3b3b3b','#9a9a9a'],['#2b303b','#8fa3c8'],['#bfb7a5','#3a3d47'],['#ded7c7','#30333c'],['#a9ad98','#3d4a42']];
 const MANANA=[['#f3efe6','#fbf6e4'],['#f6f2ea','#fdf9ec'],['#ebe6da','#f4ecd5'],['#e7e2d6','#f1e7cd'],['#eef0e6','#e2edcf'],['#a9ad98','#93a77c'],['#ded7c7','#e9dcc0'],['#e4dfd3','#efe4c9'],['#ece7dc','#f6eed9']];
-function night(s){const pal=st.mis.lug.noche?NOCHE:st.mis.lug.manana?MANANA:null;if(!pal)return s;return s.replace(/#[0-9a-f]{3,6}\b/gi,c=>{const r=pal.find(p=>p[0]===c.toLowerCase());return r?r[1]:c})}
+const PIEDRA=[['#ebe6da','#e8dcc4'],['#e4dfd3','#ddcfb2'],['#d9d3c6','#cdbd9c'],['#f3efe6','#f1e6cf'],['#ece7dc','#ece0c7'],['#e7e2d6','#e6d8bd']];
+function night(s){const pal=st.mis.lug.noche?NOCHE:st.mis.lug.manana?MANANA:st.mis.lug.pal==='piedra'?PIEDRA:null;if(!pal)return s;return s.replace(/#[0-9a-f]{3,6}\b/gi,c=>{const r=pal.find(p=>p[0]===c.toLowerCase());return r?r[1]:c})}
 function stampSVG(c,fill,txt,fs){return `<circle r="12" fill="${fill}" style="stroke:${c};stroke-width:2.2"/><text y="${fs>9?4:3}" text-anchor="middle" font-size="${fs}" font-weight="800" style="fill:${c}">${txt}</text>`}
 function stamp(k,b){const e=st.exp[k],pv=prevOf(k);let g='';
  if(pv==='res')g=stampSVG('#1f6f4a','rgba(31,111,74,.2)','✓',11);
@@ -278,7 +345,7 @@ function stamp(k,b){const e=st.exp[k],pv=prevOf(k);let g='';
  return g?`<g transform="translate(${f1(b[0]+b[2]-4)},${f1(b[1]+6)}) rotate(-14)" pointer-events="none">${g}</g>`:''}
 function hitbox(pp){let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;pp.forEach(p=>{x0=Math.min(x0,p[0]);y0=Math.min(y0,p[1]);x1=Math.max(x1,p[0]);y1=Math.max(y1,p[1])});return [x0-15,y0-48,x1-x0+30,y1-y0+54]}
 function drawEl(el,ax,ay,over){const [t,dx,dy,o]=el;const x=ax+dx,y=ay+dy;
- if(t==='p'){const c=P(x,y);return {s:person(c[0],c[1],o||{}),pp:[c]}}
+ if(t==='p'){const c=P(x,y,(o&&o.z)||0);return {s:person(c[0],c[1],o||{}),pp:[c]}}
  if(t==='bocadillo'){const c=P(x,y);if(over)over.push(bubble(c[0]+4,c[1]-44,o.t));return {s:'',pp:[]}}
  return {s:KIT[t]?KIT[t](x,y,o||{}):'',pp:anchorPts(t,x,y)}}
 function drawPl(pl,m,over){const bi=visibleBeat(pl,m);if(bi<0)return null;let s='',pp=[];
@@ -296,7 +363,7 @@ function ghosts(){const k=st.sel;if(!k)return '';let g='',marks=[];
  const labs=marks.map(([m,c])=>`<g transform="translate(${f1(c[0]-16)},${f1(c[1]+4)})"><rect width="32" height="14" rx="2" fill="#c8102e"/><text x="16" y="10.5" text-anchor="middle" font-size="9" font-weight="800" style="fill:#fff">${H(m)}</text></g>`).join('');
  return `<g pointer-events="none"><g opacity="0.22">${night(g)}</g>${path}${labs}</g>`}
 function render(){
- const m=st.m,lug=st.mis.lug;const L=lug.mobiliario().slice();const over=[];let body='',stamps='';
+ const m=st.m,lug=st.mis.lug;const L=lug.mobiliario().slice();if(lug.ambiente)L.push(...lug.ambiente(m));const over=[];let body='',stamps='';
  st.mis.items.forEach(pl=>{const r=drawPl(pl,m,over);if(pl.v.fijo)L.push({z:pl.slot[0]+pl.slot[1]-0.6,s:pl.v.fijo.map(el=>drawEl(el,pl.slot[0],pl.slot[1],null).s).join('')});
   if(!r)return;L.push({z:pl.slot[0]+pl.slot[1]+0.5,s:r.s,k:pl.v.id,pp:r.pp})});
  st.figs.forEach(f=>{if(!f.ms.includes(m))return;const p=figPos(f,m);const c=P(p[0],p[1]);L.push({z:p[0]+p[1],s:person(c[0],c[1],f.o),k:f.id,pp:[c]})});
@@ -326,7 +393,7 @@ function verdict(k){const e=st.exp[k];if(!e)return null;if(isFig(k))return e.tip
  return e.grav===v.sol.grav&&v.sol.acc.includes(e.act)?'ok':'mal'}
 let tt;function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),2400)}
 function optBtns(set,val,key,dis){return `<div class="opts">${set.map(o=>`<button class="opt${o===val?' on':''}" data-f="${key}" data-v="${o}"${dis?' disabled':''}>${o}</button>`).join('')}</div>`}
-const LUG={parque:'En el parque',plaza:'En la explanada',terraza:'En la terraza',portal_local:'Junto a los portales',parada:'En la parada',calzada:'En la calle'};
+const LUG={recorrido:'Junto al recorrido',monumento:'En el monumento',parque:'En el parque',plaza:'En la explanada',terraza:'En la terraza',portal_local:'Junto a los portales',parada:'En la parada',calzada:'En la calle'};
 function panelHTML(){
  const k=st.sel,m=st.m;
  if(!k)return `<h2>Ficha</h2><p class="empty">Toca a cualquier persona de la lámina. Si mueves el deslizador con alguien seleccionado, verás en rojo su <strong>rastro</strong> por los otros pases.</p><p class="empty">Sellos puestos: <strong>${Object.keys(st.exp).length}</strong>.</p>`;
@@ -377,8 +444,17 @@ svg.addEventListener('pointermove',e=>{if(!ptr.has(e.pointerId))return;ptr.set(e
  if(ptr.size===2&&pinch){const [a,b]=[...ptr.values()];const d=Math.hypot(a[0]-b[0],a[1]-b[1]);zoomAt((a[0]+b[0])/2,(a[1]+b[1])/2,d/pinch.d);pinch.d=d;return}
  if(ptr.size===1&&last){const dx=e.clientX-last[0],dy=e.clientY-last[1];if(Math.abs(dx)+Math.abs(dy)>4||moved){moved=true;svg.classList.add('grab');const s=svg.getBoundingClientRect().width/vb.w;vb.x-=dx/s;vb.y-=dy/s;apply();last=[e.clientX,e.clientY]}}});
 function endPtr(e){if(!ptr.has(e.pointerId))return;ptr.delete(e.pointerId);svg.classList.remove('grab');if(ptr.size<2)pinch=null;
- if(ptr.size===0&&!moved&&e.type==='pointerup'){const el=document.elementFromPoint(e.clientX,e.clientY);const g=el&&el.closest&&el.closest('[data-k]');st.sel=g?g.dataset.k:null;render();showPanel()}
+ if(ptr.size===0&&!moved&&e.type==='pointerup'){st.sel=elegir(e.clientX,e.clientY);render();showPanel()}
  if(ptr.size===1)last=[...ptr.values()][0]}
+/* v0.9: el toque se resuelve por cercanía, no por lo que esté dibujado encima.
+   Entre todas las zonas que contienen el punto gana la de centro más cercano; tocar otra vez
+   en el mismo sitio pasa a la siguiente candidata. Así ningún caso queda tapado por otro o por un árbol. */
+let ultimoToque=null;
+function elegir(cx,cy){const pt=svg.createSVGPoint();pt.x=cx;pt.y=cy;const q=pt.matrixTransform(svg.getScreenCTM().inverse());
+ const c=[...svg.querySelectorAll('.hit')].map(g=>{const r=g.querySelector('rect.hb');const x=+r.getAttribute('x'),y=+r.getAttribute('y'),w=+r.getAttribute('width'),h=+r.getAttribute('height');
+  return {k:g.dataset.k,dentro:q.x>=x&&q.x<=x+w&&q.y>=y&&q.y<=y+h,d:Math.hypot(q.x-(x+w/2),q.y-(y+h/2))}}).filter(o=>o.dentro).sort((a,b)=>a.d-b.d).map(o=>o.k);
+ const mismo=ultimoToque&&Math.hypot(cx-ultimoToque[0],cy-ultimoToque[1])<10;ultimoToque=[cx,cy];
+ if(!c.length)return null;const i=c.indexOf(st.sel);return mismo&&i>=0&&c.length>1?c[(i+1)%c.length]:c[0]}
 svg.addEventListener('pointerup',endPtr);svg.addEventListener('pointercancel',endPtr);
 svg.addEventListener('wheel',e=>{e.preventDefault();if(e.ctrlKey||e.metaKey)zoomAt(e.clientX,e.clientY,Math.exp(-e.deltaY*0.01));else{const s=svg.getBoundingClientRect().width/vb.w;vb.x+=e.deltaX/s;vb.y+=e.deltaY/s;apply()}},{passive:false});
 const stg=document.getElementById('stage');
