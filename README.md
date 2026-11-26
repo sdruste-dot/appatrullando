@@ -18,8 +18,9 @@ Herramienta **no oficial**. Las citas legales son literales del texto consolidad
 - `index.html`: carcasa y estilos.
 - `engine.js`: motor, lugares y kit de dibujo. No tiene contenido legal.
 - `dlc/lopsc.json`: contenido (viñetas, soluciones y citas literales), generado y verificado por los scripts de la fábrica.
-- `version.js`: número de versión. **Al publicar, se cambia solo aquí;** de él sale la caché del modo sin conexión.
-- `sw.js` y `manifest.webmanifest`: lo que hace que sea una app instalable y funcione sin conexión.
+- `sw.js`: modo sin conexión. **La versión vive aquí (`const VER`) y al publicar se cambia solo esa línea:** el navegador solo detecta una versión nueva cuando cambia este archivo.
+- `version.js`: nombre y autor.
+- `manifest.webmanifest`: lo que hace que sea instalable.
 
 ## Licencia
 

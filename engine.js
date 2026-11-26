@@ -396,8 +396,8 @@ function menu(){if(!load(KAV,false))return aviso();const cola=load(KC,[]);
  DISTRITOS.map(D=>{const lug=LUGARES[D.lugar],p=progs[D.id],pend=pendientes(D.id);return `<div class="mis"><h3>${lug.nombre} · turno de ${lug.turno}</h3><p>${p.sup?'<strong>Superado.</strong> ':''}${pend>0?`Quedan <strong>${pend} pendientes</strong>.`:'Completado.'} Para superarlo: ${PASA} infracciones bien resueltas (llevas ${hallRes(D.id)}).</p><button class="btn" data-go="${D.id}">Patrullar</button></div>`}).join('')+
  `<div class="mis"><h3>Misión de rescate</h3><p>${cola.length?`Tu compañero está retenido por <strong>${cola.length} ${cola.length===1?'fallo':'fallos'}</strong>: ${cola.map(c=>esc(c.t)).join(' · ')}. Vuelven con otra escena.`:'Cola vacía: no hay nadie a quien rescatar.'}</p><button class="btn${cola.length?'':' ghost'}" id="goR"${cola.length?'':' disabled'}>Salir al rescate</button></div>
  <details><summary>Cómo se juega</summary><ul><li>Tres pases: muévete entre ellos con el deslizador. Si seleccionas a alguien y cambias de pase, su rastro aparece en rojo.</li><li>Investiga a quien quieras, sin límite: la ficha te da lo que se oye, se ve o dice la central.</li><li>Sello de infracción → expediente. Sello «sin infracción LOPSC» → para lo que parece y no es.</li><li>Un hecho instantáneo se sella en el pase en que ocurre.</li><li>Puedes cerrar el servicio cuando quieras, con un solo caso: la corrección llega al cerrar. Para superar un distrito hacen falta ${PASA} infracciones bien resueltas, sumando patrullas; los señuelos no cuentan.</li><li>«← Comisaría» abandona la patrulla sin corregir nada.</li></ul></details>
- <div class="foot"><button class="opt" id="goSync">Sincronizar con otro dispositivo</button><button class="opt" id="goAviso">Aviso</button><button class="opt" id="wipe">Borrar todo el progreso</button><span class="ver">${esc(self.APP_NAME||'')} v${esc(self.APP_VER||'')} · © 2026 ${esc(self.APP_AUTHOR||'')} · CC BY-NC 4.0</span></div>`;
- document.getElementById('goSync').onclick=syncView;document.getElementById('goAviso').onclick=aviso;
+ <div class="foot"><button class="opt" id="goSync">Sincronizar con otro dispositivo</button><button class="opt" id="goAviso">Aviso</button><button class="opt" id="wipe">Borrar todo el progreso</button><button class="opt" id="goUpd">Buscar actualizaciones</button><span class="ver">${esc(self.APP_NAME||'')} <span class="vnum">${self.APP_VER?'v'+esc(self.APP_VER):''}</span> · © 2026 ${esc(self.APP_AUTHOR||'')} · CC BY-NC 4.0</span></div>`;
+ document.getElementById('goSync').onclick=syncView;document.getElementById('goUpd').onclick=buscarUpd;document.getElementById('goAviso').onclick=aviso;
  document.getElementById('menu').classList.add('show');
  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>start('distrito',b.dataset.go));
  if(cola.length)document.getElementById('goR').onclick=()=>start('rescate');
@@ -451,6 +451,8 @@ function closeService(){
 
 /* ---------- v0.7: aviso y sincronización por código ---------- */
 const KAV='inv.aviso.v2';
+function buscarUpd(){const reg=self.SWREG;if(!reg){toast('Sin conexión o en modo navegador: no se puede comprobar.');return}
+ toast('Buscando…');reg.update().then(()=>{if(reg.installing||reg.waiting)toast('Versión nueva encontrada: pulsa «Actualizar» abajo.');else toast('Tienes la última versión'+(self.APP_VER?' (v'+self.APP_VER+')':'')+'.')}).catch(()=>toast('No se ha podido comprobar. ¿Hay conexión?'))}
 function aviso(){
  document.getElementById('menuBody').innerHTML=`<h2>Antes de empezar</h2>
  <p><strong>Herramienta no oficial.</strong> La ha hecho un opositor para entrenar el supuesto práctico de Policía Local. No tiene relación con ningún tribunal, ayuntamiento ni administración.</p>

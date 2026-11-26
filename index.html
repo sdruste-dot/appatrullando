@@ -179,12 +179,17 @@ details{margin:6px 0 12px}summary{cursor:pointer;font-weight:700}
   if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
     let recargando=false;
     navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!recargando){recargando=true;location.reload()}});
-    navigator.serviceWorker.register('sw.js').then(reg=>{
+    navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(reg=>{
+      self.SWREG=reg;
       const avisar=w=>{const b=document.getElementById('upd');b.classList.add('show');document.getElementById('updGo').onclick=()=>w.postMessage('activar')};
       if(reg.waiting&&navigator.serviceWorker.controller)avisar(reg.waiting);
       reg.addEventListener('updatefound',()=>{const w=reg.installing;w&&w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)avisar(w)})});
       document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')reg.update().catch(()=>{})});
     }).catch(()=>{});
+    /* Versión: se la pregunta al service worker que controla la página. */
+    const pedirVer=()=>{const c=navigator.serviceWorker.controller;if(!c)return;const ch=new MessageChannel();
+      ch.port1.onmessage=e=>{self.APP_VER=e.data;document.querySelectorAll('.foot .vnum').forEach(el=>el.textContent='v'+e.data)};c.postMessage('version',[ch.port2])};
+    pedirVer();navigator.serviceWorker.addEventListener('controllerchange',pedirVer);
   }
 }
 </script>

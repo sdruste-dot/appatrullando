@@ -1,9 +1,11 @@
 /* Service worker: guarda la app entera en el dispositivo para que funcione sin conexión.
    Estrategia: todo se sirve desde la caché de la versión actual. Cuando se publica una versión
-   nueva (version.js cambia), el navegador instala la nueva caché en segundo plano y la app
-   muestra «Hay una versión nueva»; al aceptarla, se activa y se recarga. */
-importScripts('version.js');
-const CACHE = 'appatrullando-' + self.APP_VER;
+   nueva, el navegador instala la nueva caché en segundo plano y la app muestra
+   «Hay una versión nueva»; al aceptarla, se activa y se recarga.
+   LA VERSIÓN VIVE AQUÍ, y solo aquí: el navegador solo detecta una versión nueva si cambia
+   este archivo, así que cada publicación tiene que cambiar esta línea. */
+const VER = '0.8.1';
+const CACHE = 'appatrullando-' + VER;
 const ASSETS = [
   './', 'index.html', 'engine.js', 'version.js', 'dlc/lopsc.json', 'manifest.webmanifest',
   'fonts/archivo-latin-400-normal.woff2', 'fonts/archivo-latin-600-normal.woff2', 'fonts/archivo-latin-800-normal.woff2',
@@ -17,7 +19,10 @@ self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('appatrullando-') && k !== CACHE).map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
-self.addEventListener('message', e => { if (e.data === 'activar') self.skipWaiting(); });
+self.addEventListener('message', e => {
+  if (e.data === 'activar') self.skipWaiting();
+  if (e.data === 'version' && e.ports[0]) e.ports[0].postMessage(VER);
+});
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
