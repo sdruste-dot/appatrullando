@@ -363,7 +363,10 @@ panel.addEventListener('click',ev=>{const k=st.sel;const b=ev.target.closest('bu
 
 /* ---------- lienzo ---------- */
 let vb={x:0,y:0,w:W0,h:H0};
-function fitVB(){const r=svg.getBoundingClientRect();if(!r.width)return;const asp=r.height/r.width;const narrow=r.width<700;
+/* En pantallas estrechas hay dos encuadres: «lectura» (franja central, figuras legibles) y «entera» (toda la lámina).
+   El botón ⤢ alterna entre los dos. En pantallas anchas siempre se ve entera. */
+let vistaEntera=false;
+function fitVB(){const r=svg.getBoundingClientRect();if(!r.width)return;const asp=r.height/r.width;const narrow=r.width<700&&!vistaEntera;
  const w=narrow?540:Math.max(W0,H0/asp);const cx=narrow?P(7.5,7)[0]:W0/2,cy=narrow?P(7.5,7)[1]-30:H0/2;vb={x:cx-w/2,w,h:w*asp,y:0};vb.y=cy-vb.h/2;apply()}
 function apply(){svg.setAttribute('viewBox',`${f1(vb.x)} ${f1(vb.y)} ${f1(vb.w)} ${f1(vb.h)}`)}
 function toSvg(cx,cy){const r=svg.getBoundingClientRect();const s=r.width/vb.w;return {x:vb.x+(cx-r.left)/s,y:vb.y+(cy-r.top)/s}}
@@ -381,7 +384,8 @@ svg.addEventListener('wheel',e=>{e.preventDefault();if(e.ctrlKey||e.metaKey)zoom
 const stg=document.getElementById('stage');
 document.getElementById('zin').onclick=()=>{const r=stg.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,1.3)};
 document.getElementById('zout').onclick=()=>{const r=stg.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,1/1.3)};
-document.getElementById('zfit').onclick=fitVB;
+document.getElementById('zfit').onclick=()=>{const estrecha=svg.getBoundingClientRect().width<700;vistaEntera=estrecha?!vistaEntera:false;fitVB();
+ if(estrecha)toast(vistaEntera?'Lámina entera':'Vista de lectura')};
 new ResizeObserver(()=>{const r=svg.getBoundingClientRect();if(!r.width)return;const c=vb.y+vb.h/2;vb.h=vb.w*r.height/r.width;vb.y=c-vb.h/2;apply()}).observe(svg);
 
 /* ---------- tiempo y menú ---------- */
