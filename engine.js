@@ -163,7 +163,7 @@ function winSide(y0,y1,x,h,lit){let s='';for(let y=y0+0.35;y<y1-0.5;y+=1)for(let
 const sign=(x,y,z,t,fs=10)=>{const c=P(x,y,z);return `<text x="${f1(c[0])}" y="${f1(c[1])}" font-size="${fs}" font-weight="800" transform="rotate(26.6 ${f1(c[0])} ${f1(c[1])})">${t}</text>`};
 const road=()=>poly([P(-2.5,12),P(16,12),P(16,15.5),P(-2.5,15.5)],'#d9d3c6')+line(P(-2.5,13.75),P(16,13.75),'stroke-dasharray:10 8')+poly([P(-2.5,15.5),P(16,15.5),P(16,16.6),P(-2.5,16.6)],'#ebe6da');
 const LUGARES={
- estacion:{nombre:'Estación de autobuses',noche:true,turno:'noche',horas:['23:50','00:00','00:10'],
+ estacion:{nombre:'Estación de autobuses',fondo:'fondos/estacion.png',noche:true,turno:'noche',horas:['23:50','00:00','00:10'],
   huecos:{parada:[[1.6,7.4],[6.6,7.4],[11.6,7.4],[10.2,8.2]],calzada:[[0.4,13.1],[4.4,13.1],[8.4,13.1],[12.4,13.1],[-2.1,13.1]],portal_local:[[3.4,0.5],[9.4,0.5],[6.4,0.5],[0.8,0.5]],terraza:[[13.2,1.9]],plaza:[[5,10.2],[10,10.4],[2.4,10.0],[7.6,10.2]],parque:[[14.6,9.6]]},
   suelo(){let s=poly([P(-2.5,0),P(0,0),P(0,12),P(-2.5,12)],'#ebe6da')+poly([P(0,0),P(16,0),P(16,12),P(0,12)],'#f3efe6');
    for(let k=0;k<3;k++){const y0=5.6,x0=0.6+k*5;s+=poly([P(x0,y0),P(x0+4,y0),P(x0+4,y0+3.4),P(x0,y0+3.4)],'#e7e2d6');[0,1,2,3].forEach(d=>{s+=line(P(x0+d+0.5,y0),P(x0+d+0.5,y0+3.4),'stroke:#bfb7a5')})}
@@ -178,10 +178,10 @@ const LUGARES={
    [[13,1.4],[14.2,1.9]].forEach(([x,y])=>L.push({z:x+y,s:mesa(x,y)}));
    [[0.8,11.6],[15.2,11.4]].forEach(([x,y])=>L.push({z:x+y,s:farola(x,y)}));
    L.push({z:24.8,s:tree(15,10)});
-   [[14.4,14.6]].forEach(([x,y])=>L.push({z:x+y+0.1,s:car(x-1.5,y-0.7,{taxi:1})}));
    return L},
+  ambiente(){return [{z:29.1,s:car(12.9,13.9,{taxi:1})}]},
   fig:[[8.5,3.4],[12.6,4],[6,10.8],[2.2,10.6],[11,9.8],[14.6,3.6]],bombin:[[15.2,0.8],[0.6,10.4],[8,9.9]],gato:[4,-2.6,70]},
- rio:{nombre:'Paseo del río',noche:false,turno:'tarde',horas:['18:10','18:20','18:30'],
+ rio:{nombre:'Paseo del río',fondo:'fondos/rio.png',noche:false,turno:'tarde',horas:['18:10','18:20','18:30'],
   huecos:{parque:[[2.4,2.2],[6.6,2.4],[9.6,1.6],[4.2,3.0],[11.2,2.4]],plaza:[[4.4,8.6],[13,9],[1.8,9.4],[6.4,10.6],[11.6,8.6]],calzada:[[0.6,13.1],[5.4,13.1],[10.4,13.1],[-2.0,13.1],[8.0,13.1],[13.0,13.1]],terraza:[[8.6,8.8]],parada:[[14.2,11]],portal_local:[[12.2,0.5],[14.6,0.5],[13.4,0.6]]},
   suelo(){let s=poly([P(-2.5,0),P(0,0),P(0,12),P(-2.5,12)],'#ebe6da');
    s+=poly([P(0,0),P(16,0),P(16,4.3),P(0,4.3)],'#eef0e6');
@@ -251,7 +251,7 @@ const LUGARES={
    return L},
   fig:[[1.6,3.2],[12.4,3.3],[4.2,9.0],[9.8,9.0],[6.4,12.6],[14.8,12.8]],bombin:[[15.4,3.1],[1.4,9.1],[8.6,14.4]],gato:[1.2,-0.4,96]},
  /* v0.6: tercer lugar. Glorieta del hospital, turno de mañana. */
- hospital:{nombre:'Glorieta del hospital',noche:false,turno:'mañana',manana:true,horas:['11:10','11:20','11:30'],
+ hospital:{nombre:'Glorieta del hospital',fondo:'fondos/hospital.png',enFondo:['HOSPITAL','CAFETERÍA','H'],noche:false,turno:'mañana',manana:true,horas:['11:10','11:20','11:30'],
   huecos:{portal_local:[[1.2,0.5],[3.2,0.5],[5.0,0.5]],parque:[[1.6,5.4],[3.8,7.6],[4.6,6.2]],plaza:[[7.6,5.6],[10.4,8.4]],terraza:[[13.4,7.0]],parada:[[6.0,11.0],[8.2,11.0],[10.4,11.0]],calzada:[[0.2,13.1],[4.4,13.1],[8.6,13.1],[12.2,13.1],[-2.2,13.1]]},
   suelo(){let s=poly([P(-2.5,0),P(0,0),P(0,12),P(-2.5,12)],'#ebe6da')+poly([P(0,0),P(16,0),P(16,12),P(0,12)],'#f3efe6');
    s+=poly([P(0.4,3.6),P(5.6,3.6),P(5.6,9.4),P(0.4,9.4)],'#eef0e6');
@@ -485,9 +485,9 @@ function menu(){if(!load(KAV,false))return aviso();const cola=load(KC,[]);
 /* v0.10: fondos ilustrados (decisión 16). Si el lugar tiene `fondo`, la imagen sustituye al suelo, los edificios y el
    mobiliario, que ya vienen dibujados en ella. Encima solo se conservan los rótulos de texto del lugar (las IA de imagen
    escriben mal los textos), en su posición exacta. La imagen es PNG con transparencia: línea opaca, blanco transparente. */
-const TEXTOS=s=>(s.match(/<text[\s\S]*?<\/text>/g)||[]).join('');
+const TEXTOS=(s,fuera=[])=>(s.match(/<text[\s\S]*?<\/text>/g)||[]).filter(t=>!fuera.includes(t.replace(/<[^>]+>/g,''))).join('');
 function estatico(lug){if(!lug.fondo)return lug.suelo()+lug.edificios();
- return `<image href="${lug.fondo}" x="0" y="0" width="1120" height="780" preserveAspectRatio="none"/>`+TEXTOS(lug.suelo()+lug.edificios()+lug.mobiliario().map(o=>o.s).join(''))}
+ return `<image href="${lug.fondo}" x="0" y="0" width="1120" height="780" preserveAspectRatio="none"/>`+TEXTOS(lug.suelo()+lug.edificios()+lug.mobiliario().map(o=>o.s).join(''),lug.enFondo)}
 function start(tipo,did){const mis=buildMission(tipo,did);st={mis,m:0,rev:{},exp:{},sel:null,closed:false,STATIC:estatico(mis.lug)};st.figs=figuracion(mis.seed,mis.lug);
  document.getElementById('menu').classList.remove('show');render();showPanel();fitVB()}
 document.getElementById('close').onclick=()=>document.getElementById('cfm').classList.add('show');
