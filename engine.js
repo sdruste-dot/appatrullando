@@ -357,7 +357,7 @@ panel.addEventListener('click',ev=>{const k=st.sel;const b=ev.target.closest('bu
  else if(b.id==='sealSin')st.exp[k]={tipo:'sin',m:st.m,t:Date.now()};
  else if(b.id==='unseal')delete st.exp[k];
  else if(b.dataset.f){const e=st.exp[k];if(!e||e.locked)return;const f=b.dataset.f,v=b.dataset.v;
-  if(f==='via'){const n=SETS.via.indexOf(v);if(e.via!==n){e.via=n;e.grav=e.act=null}}else e[f]=v;checkBatch()}
+  if(f==='via'){const n=SETS.via.indexOf(v);if(e.via!==n){e.via=n;e.grav=e.act=null}}else e[f]=v}
  else return;
  render();showPanel()});
 
