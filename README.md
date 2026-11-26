@@ -20,3 +20,7 @@ Herramienta **no oficial**. Las citas legales son literales del texto consolidad
 - `dlc/lopsc.json`: contenido (viñetas, soluciones y citas literales), generado y verificado por los scripts de la fábrica.
 - `version.js`: número de versión. **Al publicar, se cambia solo aquí;** de él sale la caché del modo sin conexión.
 - `sw.js` y `manifest.webmanifest`: lo que hace que sea una app instalable y funcione sin conexión.
+
+## Licencia
+
+© 2026 sdruste-dot · [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.es): puedes usarla, compartirla y adaptarla citando al autor y sin fines comerciales. Detalle en `LICENSE`.

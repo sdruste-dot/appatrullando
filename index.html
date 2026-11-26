@@ -144,7 +144,7 @@ details{margin:6px 0 12px}summary{cursor:pointer;font-weight:700}
  <div class="ttl"><h1 id="ttl">APPatrullando la Ziudad</h1><p id="dlcInfo">Cargando paquete…</p></div>
  <div class="time"><div class="tw"><input id="t" type="range" min="0" max="2" step="1" value="0" aria-label="Pase"><div class="tlab" id="tlab"></div></div></div>
  <div class="res">
-  <div class="pips" id="pips" aria-label="Acciones de investigación"></div>
+  <button class="btn ghost" id="back">← Comisaría</button>
   <div class="seals" id="seals"></div>
   <button class="btn" id="close">Cerrar servicio</button>
  </div>
@@ -163,6 +163,11 @@ details{margin:6px 0 12px}summary{cursor:pointer;font-weight:700}
  <h2>¿Cerrar el servicio?</h2>
  <p>Después no podrás investigar ni cambiar ningún expediente.</p>
  <div class="row"><button class="btn" id="cfmYes">Cerrar y ver la resolución</button><button class="btn ghost" id="cfmNo">Seguir investigando</button></div>
+</div></div>
+<div class="ov" id="abn"><div class="dlg">
+ <h2>¿Volver a la comisaría?</h2>
+ <p>Abandonas la patrulla. Lo que hayas sellado no se corrige: no cuenta ni como acierto ni como fallo.</p>
+ <div class="row"><button class="btn" id="abnYes">Volver a la comisaría</button><button class="btn ghost" id="abnNo">Seguir patrullando</button></div>
 </div></div>
 <div class="ov" id="res"><div class="dlg" id="resBody"></div></div>
 <div class="toast" id="toast"></div>

@@ -2,7 +2,7 @@
 /* ======================= APPatrullando la Ziudad · motor v0.7 (app instalable) =======================
    El motor no contiene contenido legal: lo carga del DLC (dlc/lopsc.json).
    Los lugares (mobiliario fijo, huecos) son del motor; las viñetas, del DLC. */
-const ACCIONES=6,PASA=6;
+const PASA=6;
 const SETS={via:['Vía penal · atestado','Vía administrativa · denuncia'],
  grav:['Muy grave · art. 35','Grave · art. 36','Leve · art. 37'],
  act:['Denuncia','Denuncia, intervención cautelar y acta','Denuncia y traslado para identificación','Requerimiento previo','Comunicar al Ministerio Fiscal (menor de 14)']};
@@ -309,9 +309,8 @@ function render(){
  document.getElementById('mlabel').textContent=st.mis.nombre+' · '+H(m);
  document.getElementById('t').value=m;
  document.getElementById('tlab').innerHTML=[0,1,2].map(i=>{const n=Object.values(st.exp).filter(e=>e.m===i).length;return `<button data-m="${i}" class="${i===m?'on':''}">${H(i)}<span class="dots">${'●'.repeat(n)}</span></button>`}).join('');
- document.getElementById('pips').innerHTML='Acciones '+Array.from({length:ACCIONES},(_,i)=>`<span class="pip${i<st.acts?' full':''}"></span>`).join('');
- const n=Object.values(st.exp).filter(e=>e.locked).length;const p=prog();
- document.getElementById('seals').textContent=(p&&p.sup?'Distrito superado · ':'')+(n?`Confirmados hoy: ${n}`:'');
+ const n=Object.keys(st.exp).length;const p=prog();
+ document.getElementById('seals').textContent=(p&&p.sup?'Distrito superado · ':'')+(n?`Sellos: ${n}`:'');
  document.getElementById('ttl').textContent=st.mis.nombre;
 }
 
@@ -325,14 +324,12 @@ function verdict(k){const e=st.exp[k];if(!e)return null;if(isFig(k))return e.tip
  if(!complete(k))return 'incompleto';
  const via=v.sol.via==='adm'?1:0;if(e.via!==via)return 'mal';if(via===0)return 'ok';
  return e.grav===v.sol.grav&&v.sol.acc.includes(e.act)?'ok':'mal'}
-function checkBatch(){const open=Object.keys(st.exp).filter(k=>!isFig(k)&&!st.exp[k].locked&&plOf(k).v.tipo==='hallazgo'&&verdict(k)==='ok').sort((a,b)=>st.exp[a].t-st.exp[b].t);
- if(open.length>=3){open.slice(0,3).forEach(k=>st.exp[k].locked=true);toast('Tres infracciones confirmadas')}}
 let tt;function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),2400)}
 function optBtns(set,val,key,dis){return `<div class="opts">${set.map(o=>`<button class="opt${o===val?' on':''}" data-f="${key}" data-v="${o}"${dis?' disabled':''}>${o}</button>`).join('')}</div>`}
 const LUG={parque:'En el parque',plaza:'En la explanada',terraza:'En la terraza',portal_local:'Junto a los portales',parada:'En la parada',calzada:'En la calle'};
 function panelHTML(){
  const k=st.sel,m=st.m;
- if(!k)return `<h2>Ficha</h2><p class="empty">Toca a cualquier persona de la lámina. Si mueves el deslizador con alguien seleccionado, verás en rojo su <strong>rastro</strong> por los otros pases.</p><p class="empty">Sellos puestos: <strong>${Object.keys(st.exp).length}</strong>. Acciones restantes: <strong>${st.acts}</strong>.</p>`;
+ if(!k)return `<h2>Ficha</h2><p class="empty">Toca a cualquier persona de la lámina. Si mueves el deslizador con alguien seleccionado, verás en rojo su <strong>rastro</strong> por los otros pases.</p><p class="empty">Sellos puestos: <strong>${Object.keys(st.exp).length}</strong>.</p>`;
  let name,cap,info,vis;
  if(isFig(k)){const f=figOf(k);vis=f.ms.includes(m);name='Transeúnte';cap=vis?f.f.c:null;info=['voz',f.f.i]}
  else{const pl=plOf(k);const bi=visibleBeat(pl,m);vis=bi>=0;const ht=Object.keys(st.mis.lug.huecos).find(t=>st.mis.lug.huecos[t].some(p=>p===pl.slot||(p[0]===pl.slot[0]&&p[1]===pl.slot[1])));name=LUG[ht]||'En la calle';cap=vis?pl.v.beats[bi]:null;info=[pl.v.info.tipo,pl.v.info.texto]}
@@ -341,7 +338,7 @@ function panelHTML(){
  let s=`<div class="ph"><h2>${esc(name)}</h2><button class="opt" id="hide">Ocultar</button></div><p class="cap">${vis?esc(cap):`<em>A las ${H(m)} no está a la vista. Mira su rastro en rojo.</em>`}</p>`;
  if(inf){const lab={voz:'Dice',radio:'Radio · central',doc:'Documentación'}[inf[0]];s+=`<div class="info ${inf[0]}"><div class="k">${lab}</div>${esc(inf[1])}</div>`}
  const can=!st.closed&&!pv&&vis&&!e;
- s+=`<div class="row">${inf?'':`<button class="btn ghost" id="inv"${st.acts<1||st.closed?' disabled':''}>Investigar · 1 acción</button>`}${can?`<button class="btn" id="seal">Sello: infracción</button><button class="btn ghost" id="sealSin">Sello: sin infracción LOPSC</button>`:''}</div>`;
+ s+=`<div class="row">${inf?'':`<button class="btn ghost" id="inv"${st.closed?' disabled':''}>Investigar</button>`}${can?`<button class="btn" id="seal">Sello: infracción</button><button class="btn ghost" id="sealSin">Sello: sin infracción LOPSC</button>`:''}</div>`;
  if(pv==='res')s+=`<p class="lock">✓ Resuelto en un servicio anterior.</p>`;
  if(pv==='quem')s+=`<p class="hint">Fallado en un servicio anterior. Está en la cola: vuelve en un rescate, con otra escena.</p>`;
  if(e&&e.tipo==='sin')s+=`<div class="exp"><h3>Sin infracción LOPSC · sellado a las ${H(e.m)} ${e.locked?'<span class="lock">✓ Confirmado</span>':`<button class="opt" id="unseal">Retirar sello</button>`}</h3><p class="hint">Has decidido que aquí no hay infracción de esta ley.</p></div>`;
@@ -349,13 +346,13 @@ function panelHTML(){
   s+=`<div class="step"><div class="q">1 · ¿Por qué vía?</div>${optBtns(SETS.via,e.via==null?null:SETS.via[e.via],'via',Lk)}</div>`;
   if(e.via===1){s+=`<div class="step"><div class="q">2 · ¿Qué gravedad y qué artículo?</div>${optBtns(SETS.grav,e.grav,'grav',Lk)}</div>`;
    if(e.grav)s+=`<div class="step"><div class="q">3 · ¿Qué haces?</div>${optBtns(SETS.act,e.act,'act',Lk)}</div>`}
-  if(!Lk&&!st.closed)s+=`<p class="hint">${complete(k)?'Expediente completo. Si es correcto, contará para el próximo lote de tres infracciones.':'Rellena el expediente hasta el final.'}</p>`;
+  if(!Lk&&!st.closed)s+=`<p class="hint">${complete(k)?'Expediente completo. Se corrige al cerrar el servicio.':'Rellena el expediente hasta el final.'}</p>`;
   s+='</div>'}
  return s}
 function showPanel(){panel.innerHTML=panelHTML();panel.classList.toggle('open',!!st.sel)}
 panel.addEventListener('click',ev=>{const k=st.sel;const b=ev.target.closest('button');if(!b||!k)return;
  if(b.id==='hide')st.sel=null;
- else if(b.id==='inv'){if(st.acts>0){st.acts--;st.rev[k]=1}}
+ else if(b.id==='inv'){st.rev[k]=1}
  else if(b.id==='seal')st.exp[k]={tipo:'inf',via:null,grav:null,act:null,m:st.m,t:Date.now()};
  else if(b.id==='sealSin')st.exp[k]={tipo:'sin',m:st.m,t:Date.now()};
  else if(b.id==='unseal')delete st.exp[k];
@@ -398,16 +395,19 @@ function menu(){if(!load(KAV,false))return aviso();const cola=load(KC,[]);
  document.getElementById('menuBody').innerHTML=`<h2>Comisaría</h2><p>Elige servicio.</p>`+
  DISTRITOS.map(D=>{const lug=LUGARES[D.lugar],p=progs[D.id],pend=pendientes(D.id);return `<div class="mis"><h3>${lug.nombre} · turno de ${lug.turno}</h3><p>${p.sup?'<strong>Superado.</strong> ':''}${pend>0?`Quedan <strong>${pend} pendientes</strong>.`:'Completado.'} Para superarlo: ${PASA} infracciones bien resueltas (llevas ${hallRes(D.id)}).</p><button class="btn" data-go="${D.id}">Patrullar</button></div>`}).join('')+
  `<div class="mis"><h3>Misión de rescate</h3><p>${cola.length?`Tu compañero está retenido por <strong>${cola.length} ${cola.length===1?'fallo':'fallos'}</strong>: ${cola.map(c=>esc(c.t)).join(' · ')}. Vuelven con otra escena.`:'Cola vacía: no hay nadie a quien rescatar.'}</p><button class="btn${cola.length?'':' ghost'}" id="goR"${cola.length?'':' disabled'}>Salir al rescate</button></div>
- <details><summary>Cómo se juega</summary><ul><li>Tres pases: muévete entre ellos con el deslizador. Si seleccionas a alguien y cambias de pase, su rastro aparece en rojo.</li><li>Investigar cuesta una acción; tienes ${ACCIONES}.</li><li>Sello de infracción → expediente. Sello «sin infracción LOPSC» → para lo que parece y no es.</li><li>Un hecho instantáneo se sella en el pase en que ocurre.</li><li>Tres infracciones bien resueltas se confirman solas. Los señuelos no cuentan para los lotes ni para superar el distrito.</li></ul></details>
- <div class="foot"><button class="opt" id="goSync">Sincronizar con otro dispositivo</button><button class="opt" id="goAviso">Aviso</button><button class="opt" id="wipe">Borrar todo el progreso</button><span class="ver">${esc(self.APP_NAME||'')} v${esc(self.APP_VER||'')}</span></div>`;
+ <details><summary>Cómo se juega</summary><ul><li>Tres pases: muévete entre ellos con el deslizador. Si seleccionas a alguien y cambias de pase, su rastro aparece en rojo.</li><li>Investiga a quien quieras, sin límite: la ficha te da lo que se oye, se ve o dice la central.</li><li>Sello de infracción → expediente. Sello «sin infracción LOPSC» → para lo que parece y no es.</li><li>Un hecho instantáneo se sella en el pase en que ocurre.</li><li>Puedes cerrar el servicio cuando quieras, con un solo caso: la corrección llega al cerrar. Para superar un distrito hacen falta ${PASA} infracciones bien resueltas, sumando patrullas; los señuelos no cuentan.</li><li>«← Comisaría» abandona la patrulla sin corregir nada.</li></ul></details>
+ <div class="foot"><button class="opt" id="goSync">Sincronizar con otro dispositivo</button><button class="opt" id="goAviso">Aviso</button><button class="opt" id="wipe">Borrar todo el progreso</button><span class="ver">${esc(self.APP_NAME||'')} v${esc(self.APP_VER||'')} · © 2026 ${esc(self.APP_AUTHOR||'')} · CC BY-NC 4.0</span></div>`;
  document.getElementById('goSync').onclick=syncView;document.getElementById('goAviso').onclick=aviso;
  document.getElementById('menu').classList.add('show');
  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>start('distrito',b.dataset.go));
  if(cola.length)document.getElementById('goR').onclick=()=>start('rescate');
  document.getElementById('wipe').onclick=()=>{DISTRITOS.forEach(d=>{progs[d.id]={res:[],quem:[],sup:false};save(KP(d.id),progs[d.id])});save(KC,[]);menu();toast('Progreso y cola borrados')}}
-function start(tipo,did){const mis=buildMission(tipo,did);st={mis,m:0,acts:ACCIONES,rev:{},exp:{},sel:null,closed:false,STATIC:mis.lug.suelo()+mis.lug.edificios()};st.figs=figuracion(mis.seed,mis.lug);
+function start(tipo,did){const mis=buildMission(tipo,did);st={mis,m:0,rev:{},exp:{},sel:null,closed:false,STATIC:mis.lug.suelo()+mis.lug.edificios()};st.figs=figuracion(mis.seed,mis.lug);
  document.getElementById('menu').classList.remove('show');render();showPanel();fitVB()}
 document.getElementById('close').onclick=()=>document.getElementById('cfm').classList.add('show');
+document.getElementById('back').onclick=()=>{if(st.closed||!Object.keys(st.exp).length)return menu();document.getElementById('abn').classList.add('show')};
+document.getElementById('abnNo').onclick=()=>document.getElementById('abn').classList.remove('show');
+document.getElementById('abnYes').onclick=()=>{document.getElementById('abn').classList.remove('show');menu()};
 document.getElementById('cfmNo').onclick=()=>document.getElementById('cfm').classList.remove('show');
 document.getElementById('cfmYes').onclick=()=>{document.getElementById('cfm').classList.remove('show');closeService()};
 
@@ -418,7 +418,7 @@ function rowsFor(v,e){const r=[];const ya=x=>x==null?'—':x;const via=v.sol.via
  if(via===1){r.push(['Gravedad y artículo',ya(e.grav),v.sol.grav,e.grav===v.sol.grav]);r.push(['Qué haces',ya(e.act),v.sol.acc.join(' / '),v.sol.acc.includes(e.act)])}
  return `<table><thead><tr><th>Paso</th><th>Tu respuesta</th><th>Correcto</th></tr></thead><tbody>${r.map(x=>`<tr><td>${x[0]}</td><td class="${x[3]?'':'bad'}">${esc(x[1])}</td><td>${esc(x[2])}</td></tr>`).join('')}</tbody></table>`}
 function closeService(){
- st.closed=true;checkBatch();const sel=st.sel;st.sel=null;render();showPanel();
+ st.closed=true;const sel=st.sel;st.sel=null;render();showPanel();
  const ok=[],ko=[],imp=[];
  Object.keys(st.exp).forEach(k=>{const vd=verdict(k);if(vd==='neutro')return;if(vd==='improcedente'){imp.push(k);return}(vd==='ok'?ok:ko).push(k)});
  const card=k=>{const e=st.exp[k],pl=plOf(k),v=pl.v,vd=verdict(k);let chip,body='';
@@ -450,13 +450,14 @@ function closeService(){
 /* ---------- arranque ---------- */
 
 /* ---------- v0.7: aviso y sincronización por código ---------- */
-const KAV='inv.aviso.v1';
+const KAV='inv.aviso.v2';
 function aviso(){
  document.getElementById('menuBody').innerHTML=`<h2>Antes de empezar</h2>
  <p><strong>Herramienta no oficial.</strong> La ha hecho un opositor para entrenar el supuesto práctico de Policía Local. No tiene relación con ningún tribunal, ayuntamiento ni administración.</p>
  <p><strong>Textos legales.</strong> Las citas de cada resolución son literales de la Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana, según el texto consolidado del BOE (última actualización publicada el 23-02-2021; comprobado el 25-11-2026). El texto consolidado es informativo; para fines jurídicos vale el BOE.</p>
  <p><strong>Criterio de los casos.</strong> La vía, la gravedad y la actuación de cada escena son el criterio del autor sobre la ley, no doctrina oficial. Si ves un error, avisa.</p>
  <p><strong>No sustituye</strong> al estudio del texto legal ni a la jurisprudencia.</p>
+ <p><strong>Licencia.</strong> © 2026 ${esc(self.APP_AUTHOR||'')}. Puedes usar, copiar, compartir y adaptar esta app siempre que cites al autor y no la uses con fines comerciales (licencia Creative Commons CC BY-NC 4.0). Los textos de la ley son de dominio público.</p>
  <p><strong>Tus datos.</strong> El progreso se guarda solo en este dispositivo y no se envía a ningún sitio. Para llevarlo a otro, usa «Sincronizar».</p>
  <button class="btn" id="avOk">Entendido</button>`;
  document.getElementById('menu').classList.add('show');
